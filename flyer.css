@@ -1,0 +1,60 @@
+#fyler {
+    display: inline;
+    border-radius: 25px 25px 0px 0px;
+    background-color: white;
+    padding: 20px;
+    clear: both;
+    padding-bottom: 10px
+}
+#flyer.hide {
+    display: none;
+
+}
+#flyer .flyer-title {
+    padding-top: 10px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    color: #2483A6;
+    margin: 0;
+}
+
+#flyer .flyer-title a {
+    color: #262626;
+    border: none;
+    text-decoration: none;
+}
+.flyer-image {
+    display: block;
+    max-height: 375px;
+    width: auto;
+}
+
+.flyer-title {
+    border-radius: 25px 25px 0px 0px;
+    background: white;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.flyer-desc {
+    border-radius: 0px 0px 25px 25px;
+    background: white;
+    padding: 15px;
+    font-size: 15px;
+    margin: 0px;
+}
+.flyer-iframe9 {
+    border: 0px;
+    display: block;
+    width: 100%;
+}
+.flyer-desc.darkclass {
+    background-color: #353941 !important;
+    color: #eee !important;
+}
+#flyer .flyer-title.darkclass {
+    background-color: #353941 !important;
+    color: #eee !important;
+}
