@@ -24,7 +24,7 @@ $(document).ready(function() {
     $("#flyer-linka").attr('target', '#'); // target _blank for best.
     $("#flyer-linka").attr('alt', 'Link to Sponsor') // alt to href
     // Sponsor Iframe
-    $("#flyer-frame").attr('src', '/settings/flyer.htm'); // link to html, htm or img.
+    $("#flyer-frame").attr('src', 'flyer.htm'); // link to html, htm or img.
     $("#flyer-frame").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
     $("#flyer-frame").attr('allowpaymentrequest', 'false'); // do not allow payments
     $("#flyer-frame").attr('name', 'Flyer'); // name of iframe ALT
@@ -37,12 +37,12 @@ $(document).ready(function() {
     $("#flyer-image").attr('src',  ''); // img SRC Gif, webm, PNG or jpeg.
     $("#flyer-image").attr('title', ''); // title of img, alt
     $("#flyer-image").attr('alt', 'none'); // alt of an alt
-    $("#flyer-image").hide();
+    $("#flyer-image").hide(); //hide
     // Sponsor video
     $("#flyer_video").attr('data-video','#'); //mp4 only
     $("#flyer_video").attr('data-poster', '#'); // poster "tumbnail/cover"
     $("#flyer_video").attr('data-type', 'video/mp4'); // data type
-    $("#flyer-image").hide();
+    $("#flyer-image").hide(); //hide
     //conf
     console.log('flyer conf loaded');
 });
@@ -54,15 +54,11 @@ $(document).ready(function($) {
 
     $("#nofly").click(function() {
         $("#flyer").addClass("hide");
-        $("#yesfly").addClass("hide");
-        $("#nofly").addClass("hide");
         localStorage.setItem('ad', 'hide');
     });
 
     $("#yesfly").click(function() {
         $("#flyer").removeClass("hide");
-        $("#yesfly").removeClass("hide")
-        $("#nofly").removeClass("hide");
         localStorage.setItem('ad', null);
     });
 });
