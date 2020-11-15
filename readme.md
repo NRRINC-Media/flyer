@@ -21,8 +21,7 @@
     <button id="nofly">No ads</button>
     <!-- not needed to run. -->
 ```
-<br>
-<br>
+
 # Updates:
 ```code
 + Video support (with the help of rtopvideo - MIT)
