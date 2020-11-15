@@ -1,15 +1,18 @@
 # Welcome to Flyer
 ##### _what is flyer? flyer is a Simple ad script that helps small websites have a Single ad. and allow the use to have full control over it._
+---
 # How to use
 ## Add to head
 ```html
-<script src="/link/to/flyer.js">
-<!-- include jquery or jq.js ...>
+<script src="/link/to/flyer.js"></script>
+<!-- include jquery or jq.js ...-->
+<!-- make sure to add the css -->
 ```
 ## Add to part where you want flyer
 ```html
 <div id="flyer"></div>
 ```
+---
 # Flyer will take care of the rest
 
 ## UI controls:
@@ -30,7 +33,6 @@
 / CSS not loading due to stlye sheet not being linked right
 ~ changed loading of some parts
 ```
-
 ```code
 update key:
 + Added
