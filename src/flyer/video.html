@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="googlebot" content="noindex">
+<link rel="stylesheet" href="/src/flyer/video/rtop.videoPlayer.1.0.2.min.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/src/flyer/video/rtop.videoPlayer.1.0.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var vid = $('#my_video').RTOP_VideoPlayer({
+			showFullScreen: true,
+			showTimer: true,
+			showSoundControl: true,
+			playInModal: false,
+		});
+	});
+</script>
+<style>
+	.row2{
+		height: 40%;
+		width: 40%;
+	}
+	.fa-play-circle:before{content:"\f144"}
+</style>
+</head>
+<body>
+<div class="row2">
+	<div class="exampleVideo">
+		<div class="myVideo" id="my_video" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type='video/mp4'></div></div>
+</div>
+</body>
+</html>
