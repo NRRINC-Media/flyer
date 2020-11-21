@@ -19,7 +19,7 @@ $(document).ready(function() {
     $("#flyer-linka-m").attr('target', '#'); // target _blank for best.
     $("#flyer-linka-m").attr('alt', 'Link to Sponsor') // alt to href
     // Sponsor Iframe
-    $("#flyer-frame-m").attr('src', '/flyer.htm'); // link to html, htm or img.
+    $("#flyer-frame-m").attr('src', '/src/flyer/flyer.htm'); // link to html, htm or img.
     $("#flyer-frame-m").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
     $("#flyer-frame-m").attr('allowpaymentrequest', 'false'); // do not allow payments
     $("#flyer-frame-m").attr('name', 'Flyer'); // name of iframe ALT
@@ -52,7 +52,7 @@ $(document).ready(function() {
     $("#flyer-linka-d").attr('target', '#'); // target _blank for best.
     $("#flyer-linka-d").attr('alt', 'Link to Sponsor') // alt to href
     // Sponsor Iframe
-    $("#flyer-frame-d").attr('src', '/flyer.htm'); // link to html, htm or img.
+    $("#flyer-frame-d").attr('src', '/src/flyer/flyer.htm'); // link to html, htm or img.
     $("#flyer-frame-d").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
     $("#flyer-frame-d").attr('allowpaymentrequest', 'false'); // do not allow payments
     $("#flyer-frame-d").attr('name', 'Flyer'); // name of iframe ALT
@@ -68,7 +68,7 @@ $(document).ready(function() {
     $("#flyer-image-d").attr('alt', 'none'); // alt of an alt
     $("#flyer-image-d").hide();
     // Sponsor video
-    $("#flyer_video-d").attr('data-video','/src/flyer/video/vid.mkv'); //mp4 only
+    $("#flyer_video-d").attr('data-video',''); //mp4 only
     $("#flyer_video-d").attr('data-poster', '/src/flyer/flyer-logo.png'); // poster "tumbnail/cover"
     $("#flyer_video-d").attr('data-type', 'video/mp4'); // data type
     $("#flyer-video-d").hide();
