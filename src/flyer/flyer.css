@@ -1,4 +1,4 @@
-#fyler {
+#fyler-m {
     display: inline;
     border-radius: 25px 25px 0px 0px;
     background-color: white;
@@ -6,11 +6,11 @@
     clear: both;
     padding-bottom: 10px
 }
-#flyer.hide {
+#flyer-m.hide {
     display: none;
 
 }
-#flyer .flyer-title {
+#flyer-m .flyer-title-m {
     padding-top: 10px;
     letter-spacing: -1px;
     text-transform: uppercase;
@@ -19,42 +19,94 @@
     color: #2483A6;
     margin: 0;
 }
-
-#flyer .flyer-title a {
+#flyer-m .flyer-title-m a {
     color: #262626;
     border: none;
     text-decoration: none;
 }
-.flyer-image {
+.flyer-image-m {
     display: block;
     max-height: 375px;
     width: auto;
 }
-
-.flyer-title {
+.flyer-title-m {
     border-radius: 25px 25px 0px 0px;
     background: white;
     padding: 15px;
     font-size: 20px;
 }
-
-.flyer-desc {
+.flyer-desc-m {
     border-radius: 0px 0px 25px 25px;
     background: white;
     padding: 15px;
     font-size: 15px;
     margin: 0px;
 }
-.flyer-iframe9 {
+.flyer-iframe9-m {
     border: 0px;
     display: block;
     width: 100%;
 }
-.flyer-desc.darkclass {
+.flyer-desc-m.darkclass {
     background-color: #353941 !important;
     color: #eee !important;
 }
-#flyer .flyer-title.darkclass {
+#flyer-m .flyer-title-m.darkclass {
+    background-color: #353941 !important;
+    color: #eee !important;
+}
+/* line break
+*/
+#fyler-d {
+    display: inline;
+    background-color: white;
+    clear: both;
+}
+#flyer-d.hide {
+    display: none;
+
+}
+#flyer-d .flyer-title-d {
+    padding-top: 10px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    color: #2483A6;
+    margin: 0;
+    border-top: 2px dashed #B3B0B0;
+    background: white;
+    padding: 15px;
+    font-size: 20px;
+}
+#flyer-d .flyer-title-d a {
+    color: #262626;
+    border: none;
+    text-decoration: none;
+}
+.flyer-image-d {
+    display: block;
+    max-height: 375px;
+    width: auto;
+}
+.flyer-desc-d {
+    background: white;
+    padding: 15px;
+    font-size: 15px;
+    margin: 0px;
+    border-bottom: 2px dashed #B3B0B0;
+}
+.flyer-iframe9-d {
+    border: 0px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.flyer-desc-d.darkclass {
+    background-color: #353941 !important;
+    color: #eee !important;
+}
+#flyer-d .flyer-title-d.darkclass {
     background-color: #353941 !important;
     color: #eee !important;
 }
