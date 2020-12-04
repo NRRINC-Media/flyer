@@ -2,6 +2,7 @@
  * RTO+P Video Player v1.0.2
  * Copyright 2019 RTO+P https://www.rtop.com
  * Author Rob Kandel
+ *  Huge thanks to Rob Kandel for making this Awesome Script! - Nolan
  */
 
 (function(jQuery, window, document, undefined) {

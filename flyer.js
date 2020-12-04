@@ -1,3 +1,4 @@
+// the Flyer Project, NRRINC Media (C) 2020, Apache V2
 $('head').append('<link rel="stylesheet" href="https://cdn.flyer.nrrinc.net/flyer.css" type="text/css" />');// AD CSS
 $('head').append('<link rel="stylesheet" href="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.min.css" />');
 $('head').append('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">');
