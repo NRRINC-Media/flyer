@@ -27,7 +27,7 @@ $(document).ready(function() {
     $("#flyer-linka-m").attr('target', '#'); // target _blank for best.
     $("#flyer-linka-m").attr('alt', 'Link to Sponsor') // alt to href
     // Sponsor Iframe
-    $("#flyer-frame-m").attr('src', 'https://cdn.flyer.nrrinc.net/flyer.htm'); // link to html, htm or img.
+    $("#flyer-frame-m").attr('src', 'flyer.htm'); // link to html, htm or img.
     $("#flyer-frame-m").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
     $("#flyer-frame-m").attr('allowpaymentrequest', 'false'); // do not allow payments
     $("#flyer-frame-m").attr('name', 'Flyer'); // name of iframe ALT
@@ -45,7 +45,7 @@ $(document).ready(function() {
     $("#flyer_video-m").attr('data-video','#'); //mp4 only
     $("#flyer_video-m").attr('data-poster', '#'); // poster "tumbnail/cover"
     $("#flyer_video-m").attr('data-type', 'video/mp4'); // data type
-    $("#flyer-video-m").hide();
+    $("#flyer-image-m").hide();
     console.log('flyer conf loaded');
 });
 //flyer desktop
@@ -60,7 +60,7 @@ $(document).ready(function() {
     $("#flyer-linka-d").attr('target', '#'); // target _blank for best.
     $("#flyer-linka-d").attr('alt', 'Link to Sponsor') // alt to href
     // Sponsor Iframe
-    $("#flyer-frame-d").attr('src', 'https://cdn.flyer.nrrinc.net/flyer.htm'); // link to html, htm or img.
+    $("#flyer-frame-d").attr('src', 'flyer.htm'); // link to html, htm or img.
     $("#flyer-frame-d").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
     $("#flyer-frame-d").attr('allowpaymentrequest', 'false'); // do not allow payments
     $("#flyer-frame-d").attr('name', 'Flyer'); // name of iframe ALT
@@ -78,7 +78,7 @@ $(document).ready(function() {
     $("#flyer_video-d").attr('data-video','#'); //mp4 only
     $("#flyer_video-d").attr('data-poster', '#'); // poster "tumbnail/cover"
     $("#flyer_video-d").attr('data-type', 'video/mp4'); // data type
-    $("#flyer-video-d").hide();
+    $("#flyer-image-d").hide();
     console.log('flyer conf loaded');
 });
 // ad setting ON/OFF
