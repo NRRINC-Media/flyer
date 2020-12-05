@@ -45,15 +45,13 @@ $(document).ready(function () {
     $("#flyer-frame-m").attr('name', 'Flyer'); // name of iframe ALT
     $("#flyer-frame-m").attr('allowfullscreen', 'false');  // do not change.
     $("#flyer-frame-m").attr('referrerpolicy', 'unsafe-url'); // what kind of URL is it? Be unsafe if you dont know.
-    // Sponsor Dsec
-    // Sponsor image
-    $("#flyer-image-m").attr('src', ''); // img SRC Gif, webm, PNG or jpeg.
-    $("#flyer-image-m").attr('title', ''); // title of img, alt
-    $("#flyer-image-m").attr('alt', 'none'); // alt of an alt
-    // Sponsor video
-    $("#flyer_video-m").attr('data-video', '#'); //mp4 only
+    $("#flyer-image-m").attr('src', localStorage.getItem("flyer-img-src")); // img SRC Gif, webm, PNG or jpeg.
+    $("#flyer-image-m").attr('title', localStorage.getItem("flyer-img-title")); // title of img, alt
+    $("#flyer-image-m").attr('alt',  localStorage.getItem("flyer-img-alt")); // alt of an alt
+    $("#flyer_video-m").attr('data-video', localStorage.getItem("flyer-video-data")); //mp4 only
     $("#flyer_video-m").attr('data-poster', '#'); // poster "tumbnail/cover"
     $("#flyer_video-m").attr('data-type', 'video/mp4'); // data type
+    //break
     $("#flyer-frame-d").attr('src', ''); // link to html, htm or img.
     $("#flyer-frame-d").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
     $("#flyer-frame-d").attr('allowpaymentrequest', 'false'); // do not allow payments
@@ -61,11 +59,11 @@ $(document).ready(function () {
     $("#flyer-frame-d").attr('allowfullscreen', 'false');  // do not change.
     $("#flyer-frame-d").attr('referrerpolicy', 'unsafe-url'); // what kind of URL is it? Be unsafe if you dont know.
     // Sponsor image
-    $("#flyer-image-d").attr('src', ''); // img SRC Gif, webm, PNG or jpeg.
-    $("#flyer-image-d").attr('title', ''); // title of img, alt
-    $("#flyer-image-d").attr('alt', 'none'); // alt of an alt
+    $("#flyer-image-d").attr('src', localStorage.getItem("flyer-img-src")); // img SRC Gif, webm, PNG or jpeg.
+    $("#flyer-image-d").attr('title', localStorage.getItem("flyer-img-title")); // title of img, alt
+    $("#flyer-image-d").attr('alt', localStorage.getItem("flyer-img-alt")); // alt of an alt
     // Sponsor video
-    $("#flyer_video-d").attr('data-video', '#'); //mp4 only
+    $("#flyer_video-d").attr('data-video', localStorage.getItem("flyer-video-data")); //mp4 only
     $("#flyer_video-d").attr('data-poster', '#'); // poster "tumbnail/cover"
     $("#flyer_video-d").attr('data-type', 'video/mp4'); // data type
     console.log('flyer conf loaded');

@@ -10,3 +10,10 @@ localStorage.setItem("flyer-video-poster", '#'); // Cover video like thumbnail.
 //localStorage.setItem("show-video", "1");
 localStorage.setItem("show-iframe", "1");
 //localStorage.setItem("show-img", "1");
+
+
+
+localStorage.setItem("flyer-img-alt","text");
+localStorage.setItem("flyer-img-title", "title");
+localStorage.setItem("flyer-img-src", "link/to/png"); // use https://your.site/to/img.png
+localStorage.setItem("flyer-video-data", "link/to/mp4"); // use https://your.site/to/video.mp4
