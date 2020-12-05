@@ -1,9 +1,9 @@
 // the Flyer Project, NRRINC Media (C) 2020, Apache V2
-$('head').append('<link rel="stylesheet" href="https://cdn.flyer.nrrinc.net/flyer.css" type="text/css" />');// AD CSS
-$('head').append('<link rel="stylesheet" href="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.min.css" />');
-$('head').append('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">');
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://cdn.flyer.nrrinc.net/flyer.css"/>');// AD CSS
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.min.css" type="text/css"/>');
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" type="text/css">');
 console.log('css loaded');
-$('head').append('<script type="text/javascript" src="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.js"></script>');
+$('head').append('<script type="text/javascript" crossorigin="anonymous" src="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.js"></script>');
 // put anything above === HERE === that needs to be loaded before hand. Such as CSS or scripts.
 console.log('flyer init loaded');
 // auto set ad
@@ -63,6 +63,10 @@ $(document).ready(function () {
     $("#flyer_video-d").attr('data-type', 'video/mp4'); // data type
     $("#flyer_video-m").attr('data-type', 'video/mp4'); // data type
     console.log('flyer conf loaded');
+});
+//load default settings
+$(document).ready(function () {
+    localStorage.setItem("flyer-Sponsor-name","A Word From Our Sponsor: Crispy"),localStorage.setItem("flyer-link-href","#"),localStorage.setItem("flyer-link-href-alt","alt text"),localStorage.setItem("flyer-iframe-m-src","flyer.htm"),localStorage.setItem("flyer-iframe-m-rp","unsafe-url"),localStorage.setItem("flyer-desc","Your ad desc here"),localStorage.setItem("flyer-desc-alt","Your ad alt for screen readers"),localStorage.setItem("flyer-video-data","#"),localStorage.setItem("flyer-video-poster","#"),localStorage.setItem("show-iframe","1"),localStorage.setItem("flyer-img-alt","text"),localStorage.setItem("flyer-img-title","title"),localStorage.setItem("flyer-img-src","link/to/png"),localStorage.setItem("flyer-video-data","link/to/mp4"),localStorage.setItem("flyer-frame-src","link/to/.htm/l"),localStorage.setItem("flyer-video-poster","link/to/png"),localStorage.setItem("flyer-frame-rp","unsafe-url");
 });
 // ad setting ON/OFF
 $(document).ready(function ($) {

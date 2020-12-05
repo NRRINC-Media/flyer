@@ -1,7 +1,7 @@
 // the Flyer Project, NRRINC Media (C) 2020, Apache V2
-$('head').append('<link rel="stylesheet" crossorigin="anonymous" href="https://cdn.flyer.nrrinc.net/flyer.css" type="text/css" />');// AD CSS
-$('head').append('<link rel="stylesheet" crossorigin="anonymous" href="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.min.css" />');
-$('head').append('<link rel="stylesheet" crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">');
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://cdn.flyer.nrrinc.net/flyer.css" type="text/css" />');// AD CSS
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.min.css" />');
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">');
 console.log('css loaded');
 $('head').append('<script type="text/javascript" crossorigin="anonymous" src="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.js"></script>');
 // put anything above === HERE === that needs to be loaded before hand. Such as CSS or scripts.
