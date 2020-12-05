@@ -4,14 +4,14 @@ $('head').append('<link rel="stylesheet" href="https://cdn.flyer.nrrinc.net/rtop
 $('head').append('<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">');
 console.log('css loaded');
 $('head').append('<script type="text/javascript" src="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.js"></script>');
-$(document).ready(function () {
-    var vid = $('#flyer_video-m').RTOP_VideoPlayer({
-        showFullScreen: true,
-        showTimer: true,
-        showSoundControl: true,
-        playInModal: false,
-    });
-});
+//$(document).ready(function () {
+//    var vid = $('#flyer_video-m').RTOP_VideoPlayer({
+//        showFullScreen: true,
+//        showTimer: true,
+//        showSoundControl: true,
+//        playInModal: false,
+//    });
+//});
 // put anything above === HERE === that needs to be loaded before hand. Such as CSS or scripts.
 console.log('flyer init loaded');
 // auto set ad
@@ -60,7 +60,7 @@ $(document).ready(function() {
     $("#flyer-linka-d").attr('target', '#'); // target _blank for best.
     $("#flyer-linka-d").attr('alt', 'Link to Sponsor') // alt to href
     // Sponsor Iframe
-    $("#flyer-frame-d").attr('src', 'https://cdn.flyer.nrrinc.net/flyer.htm'); // link to html, htm or img.
+    $("#flyer-frame-d").attr('src', ''); // link to html, htm or img.
     $("#flyer-frame-d").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
     $("#flyer-frame-d").attr('allowpaymentrequest', 'false'); // do not allow payments
     $("#flyer-frame-d").attr('name', 'Flyer'); // name of iframe ALT
@@ -103,4 +103,3 @@ $(document).ready(function($) {
 console.log('flyer enable/disable conf loaded')
 // <div id="flyer"></div>
 // video stuff RTOP_VideoPlayer in LICENSE /src/flyer/video/LICENSE
-console.log('flyer fully loaded');

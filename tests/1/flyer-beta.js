@@ -22,10 +22,13 @@ $(document).ready(function() {
     $("#flyer-m").append('<br><h2 class="flyer-title-m"><a href="#" id="flyer-linka-m"><i id="fyler-Sponsor-name-m"></i></a></h2><div class="entry"><desc><img class="flyer-image-m" id="flyer-image-m" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-m" class="flyer-iframe9-m"></iframe><div class="myVideo" id="flyer_video-m" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc-m" id="flyer-desc-m"></p></desc></div>');
     console.log('flyer markup Loaded');
     //Sponer name
-    $("#fyler-Sponsor-name-m").append('A Word From Our Sponsor:'); // top name
-    $("#flyer-linka-m").attr('a', '#'); // href ro sponsor
-    $("#flyer-linka-m").attr('target', '#'); // target _blank for best.
+    $("#fyler-Sponsor-name-m").append(localStorage.getItem("fyler-Sponsor-name")); // top name
+    localStorage.setItem("fyler-Sponsor-name", "A Word From Our Sponsor:");
+    $("#flyer-linka-m").attr('a', localStorage.getItem("fyler-link-href")); // href ro sponsor
+    localStorage.setItem("flyer-link-href", "#");
+    $("#flyer-linka-m").attr('target', '_blank'); // target _blank for best.
     $("#flyer-linka-m").attr('alt', 'Link to Sponsor') // alt to href
+    localStorage.setItem("flyer-link");
     // Sponsor Iframe
     $("#flyer-frame-m").attr('src', 'flyer.htm'); // link to html, htm or img.
     $("#flyer-frame-m").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
