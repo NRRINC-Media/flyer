@@ -20,6 +20,13 @@ $(document).ready(function() {
     $("#flyer-frame-m").attr('allowfullscreen', 'false');  // do not change.
     $("#flyer-frame-m").attr('referrerpolicy', localStorage.getItem("flyer-iframe-m-rp")); // what kind of URL is it? Be unsafe if you dont know.
     localStorage.setItem("flyer-iframe-m-rp","unsafe-url");
+    if ("show-video" in localStorage) {
+        $("#flyer-frame-m").show(); 
+        console.log('frame shown');
+    } else {
+        $("#flyer-frame-m").hide(); 
+        console.log('frame hidden');
+    };
     // Sponsor Dsec
     $("#flyer-desc-m").append(localStorage.getItem("flyer-desc")); // Bottom text
     localStorage.setItem("flyer-desc", "Your ad desc here");
@@ -29,13 +36,25 @@ $(document).ready(function() {
     $("#flyer-image-m").attr('src',  ''); // img SRC Gif, webm, PNG or jpeg.
     $("#flyer-image-m").attr('title', ''); // title of img, alt
     $("#flyer-image-m").attr('alt', 'none'); // alt of an alt
-    $("#flyer-image-m").hide(); // DO NOT TOUCH. WIP.
+    if ("show-video" in localStorage) {
+        $("#flyer-image-m").show(); 
+        console.log('image shown');
+    } else {
+        $("#flyer-image-m").hide(); 
+        console.log('image hidden');
+    };
     // Sponsor video
     $("#flyer_video-m").attr('data-video', localStorage.getItem("flyer-video-data")); //mp4 only
     localStorage.setItem("flyer-video-data", "#");
     $("#flyer_video-m").attr('data-poster', localStorage.getItem("flyer-video-poster")); // poster "tumbnail/cover"
     localStorage.setItem("flyer-video-poster", '#');
     $("#flyer_video-m").attr('data-type', 'video/mp4'); // data type
-    $("#flyer-video-m").hide(); // DO NOT TOUCH. WIP.
+    if ("show-video" in localStorage) {
+        $("#flyer-video-m").show(); 
+        console.log('video shown');
+    } else {
+        $("#flyer-video-m").hide();
+        console.log('video hidden');
+    };
     console.log('flyer conf loaded');
 });

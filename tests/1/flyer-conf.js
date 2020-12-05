@@ -7,3 +7,6 @@ localStorage.setItem("flyer-desc", "Your ad desc here"); // your ad desc.... duh
 localStorage.setItem("flyer-desc-alt", "Your ad alt for screen readers"); // long desc, DUH,
 localStorage.setItem("flyer-video-data", "#"); // video data MP4 Only.
 localStorage.setItem("flyer-video-poster", '#'); // Cover video like thumbnail.
+//localStorage.setItem("show-video", "1");
+localStorage.setItem("show-iframe", "1");
+//localStorage.setItem("show-img", "1");
