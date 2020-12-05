@@ -9,6 +9,8 @@ console.log('flyer init loaded');
 // auto set ad
 //flyer mobile
 $(document).ready(function () {
+    $("#flyer-d").append('<br><h2 class="flyer-title-d"><a href="#" id="flyer-link-a"><i id="flyer-Sponsor-name-d"></i></a></h2><div class="entry"><desc><img class="flyer-image-d" id="flyer-image-d" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-d" class="flyer-iframe9-d"></iframe><div class="myVideo" id="flyer_video-d" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc" id="flyer-desc"></p></desc></div>');
+    $("#flyer-m").append('<br><h2 class="flyer-title-m"><a href="#" id="flyer-link-a"><i id="flyer-Sponsor-name-m"></i></a></h2><div class="entry"><desc><img class="flyer-image-m" id="flyer-image-m" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-m" class="flyer-iframe9-m"></iframe><div class="myVideo" id="flyer_video-m" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc" id="flyer-desc"></p></desc></div>');
     // Flyer items not locked due to Device
     $("#flyer-Sponsor-name-m").append('A Word From Our Sponsor:'); // top name
     $("#flyer-link-a").attr('a', '#'); // href ro sponsor
@@ -30,42 +32,36 @@ $(document).ready(function () {
      };
     if ("show-img" in localStorage) { $("#flyer-img-m").show(); console.log('img shown'); } else { $("#flyer-img-m").hide(); console.log('img hidden'); };
     if ("show-frame" in localStorage) { $("#flyer-frame-m").show(); console.log('frame shown'); } else { $("#flyer-frame-m").hide(); console.log('frame hidden'); };
+    // items locked to device
 });
 $(document).ready(function () {
-    //flyer css main
-    // flyer
-    $("#flyer-d").append('<br><h2 class="flyer-title-d"><a href="#" id="flyer-link-a"><i id="flyer-Sponsor-name-d"></i></a></h2><div class="entry"><desc><img class="flyer-image-d" id="flyer-image-d" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-d" class="flyer-iframe9-d"></iframe><div class="myVideo" id="flyer_video-d" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc" id="flyer-desc"></p></desc></div>');
-    $("#flyer-m").append('<br><h2 class="flyer-title-m"><a href="#" id="flyer-link-a"><i id="flyer-Sponsor-name-m"></i></a></h2><div class="entry"><desc><img class="flyer-image-m" id="flyer-image-m" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-m" class="flyer-iframe9-m"></iframe><div class="myVideo" id="flyer_video-m" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc" id="flyer-desc"></p></desc></div>');
-    console.log('flyer markup Loaded');
-    //Sponer name
-    // Sponsor Iframe
-    $("#flyer-frame-m").attr('src', 'https://cdn.flyer.nrrinc.net/flyer.htm'); // link to html, htm or img.
+    // device locked items
+    $("#flyer-frame-m").attr('src', localStorage.getItem("flyer-frame-src")); // link to html, htm or img.
+    $("#flyer-frame-d").attr('src', localStorage.getItem("flyer-frame-src")); // link to html, htm or img.
     $("#flyer-frame-m").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
-    $("#flyer-frame-m").attr('allowpaymentrequest', 'false'); // do not allow payments
-    $("#flyer-frame-m").attr('name', 'Flyer'); // name of iframe ALT
-    $("#flyer-frame-m").attr('allowfullscreen', 'false');  // do not change.
-    $("#flyer-frame-m").attr('referrerpolicy', 'unsafe-url'); // what kind of URL is it? Be unsafe if you dont know.
-    $("#flyer-image-m").attr('src', localStorage.getItem("flyer-img-src")); // img SRC Gif, webm, PNG or jpeg.
-    $("#flyer-image-m").attr('title', localStorage.getItem("flyer-img-title")); // title of img, alt
-    $("#flyer-image-m").attr('alt',  localStorage.getItem("flyer-img-alt")); // alt of an alt
-    $("#flyer_video-m").attr('data-video', localStorage.getItem("flyer-video-data")); //mp4 only
-    $("#flyer_video-m").attr('data-poster', '#'); // poster "tumbnail/cover"
-    $("#flyer_video-m").attr('data-type', 'video/mp4'); // data type
-    //break
-    $("#flyer-frame-d").attr('src', ''); // link to html, htm or img.
     $("#flyer-frame-d").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
-    $("#flyer-frame-d").attr('allowpaymentrequest', 'false'); // do not allow payments
+    $("#flyer-frame-m").attr('name', 'Flyer'); // name of iframe ALT
     $("#flyer-frame-d").attr('name', 'Flyer'); // name of iframe ALT
+    $("#flyer-frame-m").attr('allowfullscreen', 'false');  // do not change.
     $("#flyer-frame-d").attr('allowfullscreen', 'false');  // do not change.
-    $("#flyer-frame-d").attr('referrerpolicy', 'unsafe-url'); // what kind of URL is it? Be unsafe if you dont know.
+    $("#flyer-frame-d").attr('allowpaymentrequest', 'false'); // do not allow payments
+    $("#flyer-frame-m").attr('allowpaymentrequest', 'false'); // do not allow payments
+    $("#flyer-frame-d").attr('referrerpolicy', localStorage.getItem("flyer-frame-rp")); // what kind of URL is it? Be unsafe if you dont know.
+    $("#flyer-frame-m").attr('referrerpolicy', localStorage.getItem("flyer-frame-rp")); // what kind of URL is it? Be unsafe if you dont know.
     // Sponsor image
     $("#flyer-image-d").attr('src', localStorage.getItem("flyer-img-src")); // img SRC Gif, webm, PNG or jpeg.
     $("#flyer-image-d").attr('title', localStorage.getItem("flyer-img-title")); // title of img, alt
     $("#flyer-image-d").attr('alt', localStorage.getItem("flyer-img-alt")); // alt of an alt
+    $("#flyer-image-m").attr('src', localStorage.getItem("flyer-img-src")); // img SRC Gif, webm, PNG or jpeg.
+    $("#flyer-image-m").attr('title', localStorage.getItem("flyer-img-title")); // title of img, alt
+    $("#flyer-image-m").attr('alt',  localStorage.getItem("flyer-img-alt")); // alt of an alt
     // Sponsor video
     $("#flyer_video-d").attr('data-video', localStorage.getItem("flyer-video-data")); //mp4 only
-    $("#flyer_video-d").attr('data-poster', '#'); // poster "tumbnail/cover"
+    $("#flyer_video-m").attr('data-video', localStorage.getItem("flyer-video-data")); //mp4 only
+    $("#flyer_video-d").attr('data-poster',localStorage.getItem("flyer-video-poster")); // poster "tumbnail/cover"
+    $("#flyer_video-m").attr('data-poster', localStorage.getItem("flyer-video-poster")); // poster "tumbnail/cover"
     $("#flyer_video-d").attr('data-type', 'video/mp4'); // data type
+    $("#flyer_video-m").attr('data-type', 'video/mp4'); // data type
     console.log('flyer conf loaded');
 });
 // ad setting ON/OFF
