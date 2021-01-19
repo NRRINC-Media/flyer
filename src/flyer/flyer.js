@@ -1,6 +1,6 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
-$("head").append('<script src="/tests/4/src/flyer/flyer-conf.js"></script>');
-$("head").append('<link rel="stylesheet" href="/tests/4/src/flyer/flyer.css">');
+$("head").append('<script src="/src/flyer/flyer-conf.js"></script>');
+$("head").append('<link rel="stylesheet" href="/src/flyer/flyer.css">');
 $(document).ready(function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
