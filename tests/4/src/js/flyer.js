@@ -3,14 +3,14 @@ $(document).ready(function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
         <h2 id="flyer-t">\
-        <a href="#" id="flyer-title" target="#" alt="Link to Sponsor"></a>\
+        <a href="#" id="flyer-title" target="#" alt="Link to Sponsor"></a><button style="position: absolute; right: 35px; top: 25px;background-color: Transparent;cursor:pointer;" onclick="rmvflyer()">X</button>\
         </h2>\
         <div id="flyer-content">\
         <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
         <iframe id="flyer-frame" class="flyer-iframe" src="" allowpaymentrequest="false" name="Flyer" allowfullscreen="false" referrerpolicy="unsafe-url"></iframe>\
-        <div class="myVideo" id="flyer_video-m" data-video="#" data-poster="#" data-type="video/mp4"></div>\
         <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
         </div>');
+        // removed, goes above p.flyer-desc         <div class="myVideo" id="flyer_video-m" data-video="#" data-poster="#" data-type="video/mp4"></div>
         $(document).ready(function () {
             // device locked items
                 $("#flyer-frame").attr('src', localStorage.getItem("flyer-frame-src")); // link to html, htm or img.
@@ -31,8 +31,18 @@ $(document).ready(function () {
                 $("#flyer-title").append(localStorage.getItem("flyer-title")); // top name
                 $("#flyer-desc").append('Your ad here'); // Bottom text
                 $("#flyer-desc").attr('alt', 'ad desc.'); // bottom alt text
-                if ("show-img" in localStorage) { $("#flyer-img-m").show(); console.log('Flyer: img'); } else { $("#flyer-img-m").hide();};
-                if ("show-frame" in localStorage) { $("#flyer-frame-m").show(); console.log('Flyer: frame'); } else { $("#flyer-frame-m").hide();};
+                if ("show-img" in localStorage) {
+                    $("#flyer-image").show();
+                        console.log('Flyer: img');
+                    } else {
+                        $("#flyer-image").remove();
+                    };
+                if ("show-frame" in localStorage) {
+                    $("#flyer-frame").show();
+                        console.log('Flyer: frame'); 
+                    } else { 
+                        $("#flyer-frame").remove();
+                    };
                 console.log("Flyer: Im Locked and Loaded. Bring. it. on.");
         });
     } else {
@@ -48,11 +58,13 @@ $(document).ready(function ($) {
 
     $("#nofly").click(function () {
         $("#flyer").addClass("hide");
+        console.log("Flyer: Hidden");
         localStorage.setItem('ad', 'hide');
     });
 
     $("#yesfly").click(function () {
         $("#flyer").removeClass("hide");
+        console.log("Flyer: Shown");
         localStorage.setItem('ad', null);
     });
     console.log('Flyer buttons loaded');
@@ -62,4 +74,14 @@ $(document).ready(function ($) {
         $("#yesfly").remove();
 };
 });
+//func
+function rmvflyer() {
+    console.log("Flyer: Removed");
+    $("#flyer").empty();
+    $("#flyer").addClass("hide");
+    localStorage.setItem('ad', 'hide');
+    $("#flyer").attr('id','flyer-removed')
+    $("#flyer-removed").append('<div style="padding:20px">Flyer will Not open Again. Ad Closed by Flyer.</div>');
+    setTimeout(function(){$("#flyer-removed").remove();console.log("Flyer: Hidden");}, 5000);
+}
 // <div id="flyer"></div>
