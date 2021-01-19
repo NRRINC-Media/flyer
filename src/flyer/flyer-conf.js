@@ -1,4 +1,4 @@
-//flyer conf
+//flyer conf, // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
 localStorage.setItem('flyer-aid','')
 localStorage.setItem('flyer-title','A Word From Our Sponsor: Crispy')
 localStorage.setItem('flyer-link-href','#')
