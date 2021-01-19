@@ -33,7 +33,7 @@ $(document).ready(function () {
                 $("#flyer-desc").attr('alt', 'ad desc.'); // bottom alt text
                 if ("show-img" in localStorage) { $("#flyer-img-m").show(); console.log('Flyer: img'); } else { $("#flyer-img-m").hide();};
                 if ("show-frame" in localStorage) { $("#flyer-frame-m").show(); console.log('Flyer: frame'); } else { $("#flyer-frame-m").hide();};
-                console.log("Locked and Loaded -flyer")
+                console.log("Flyer: Im Locked and Loaded. Bring. it. on.");
         });
     } else {
         console.error('Flyer: div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.');
