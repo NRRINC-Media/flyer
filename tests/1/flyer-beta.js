@@ -1,147 +1,21 @@
 // the Flyer Project, NRRINC Media (C) 2020, Apache V2  
-$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://cdn.flyer.nrrw1inc.net/flyer.css"/>');// YEs there is an error for a Reason. having to do with CORS. i hate apache2.
-$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.min.css" type="text/css"/>');
-$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" type="text/css">');
 console.log('css loaded');
+
 $('head').append('<script type="text/javascript" crossorigin="anonymous" src="https://cdn.flyer.nrrinc.net/rtop.videoPlayer.1.0.2.js"></script>');
 // put anything above === HERE === that needs to be loaded before hand. Such as CSS or scripts.
 console.log('flyer init loaded');
 // auto set ad
 $(document).ready(function () {
-    $('#flyer-m').css({
-        'border-radius' : '25px 25px 25px 25px',
-        'background-color' : 'white',
-        'padding' : '20px',
-        'clear' : 'both'
-    });
-    
-    $('#flyer-m.hide').css({
-        'display' : 'none'
-    });
-    
-    $('#flyer-m .flyer-title-m').css({
-        'padding' : '-10px',
-        'letter-spacing' : '-1px',
-        'text-transform' : 'uppercase',
-        'font-family' : 'Oswald, sans-serif',
-        'font-weight' : 'normal',
-        'color' : '#2483A6',
-        'margin' : '0px',
-        'display' : 'block'
-    });
-    
-    $('#flyer-m .flyer-title-m a').css({
-        'color' : '#262626',
-        'border' : 'none',
-        'text-decoration' : 'none',
-    });
-    
-    $('.flyer-image-m').css({
-        'display' : 'block',
-        'max-height' : '375px',
-        'width' : 'auto'
-    });
-    
-    $('.flyer-title-m').css({
-        'border-radius' : '25px 25px 0px 0px',
-        'background' : 'white',
-        'padding' : '15px',
-        'font-size' : '20px'
-    });
-    
-    $('.flyer-desc-m').css({
-        'border-radius' : '0px 0px 25px 25px',
-        'background' : 'white',
-        'padding' : '15px',
-        'font-size' : '15px',
-        'margin' : '0px'
-    });
-    
-    $('.flyer-iframe9-m').css({
-        'border' : '0px',
-        'display' : 'block',
-        'width' : '100%'
-    });
-    
-    $('.flyer-desc-m.darkclass').css({
-        'background-color' : '#353941 !important',
-        'color' : '#eee !important'
-    });
-    
-    $('#flyer-m .flyer-title-m.darkclass').css({
-        'background-color' : '#353941 !important',
-        'color' : '#eee !important'
-    });
-    
-    $('#flyer-d').css({
-        'display' : 'inline',
-        'background-color' : 'white',
-        'clear' : 'both'
-    });
-    
-    $('#flyer-d.hide').css({
-        'display' : 'none'
-    });
-    
-    $('#flyer-d .flyer-title-d').css({
-        'padding-top' : '10px',
-        'letter-spacing' : '-1px',
-        'text-transform' : 'uppercase',
-        'font-family' : 'Oswald, sans-serif',
-        'font-weight' : 'normal',
-        'color' : '#2483A6',
-        'margin' : '0',
-        'border-top' : '1px dashed #B3B0B0'
-    });
-    
-    $('#flyer-d .flyer-title-d a').css({
-        'color' : '#262626',
-        'border' : 'none',
-        'text-decoration' : 'none'
-    });
-    
-    $('.flyer-image-d').css({
-        'display' : 'block',
-        'max-height' : '375px',
-        'width' : 'auto'
-    });
-    
-    $('.flyer-title-d').css({
-        'border-radius' : '25px 25px 0px 0px',
-        'background' : 'white',
-        'padding' : '15px',
-        'font-size' : '20px'
-    });
-    
-    $('.flyer-desc-d').css({
-        'background' : 'white',
-        'padding' : '15px',
-        'font-size' : '15px',
-        'margin' : '0px',
-        'border-bottom' : '1px dashed #B3B0B0'
-    });
-    
-    $('.flyer-iframe9-d').css({
-        'border' : '0px',
-        'display' : 'block',
-        'width' : '100%',
-        'height' : 'auto'
-    });
-    
-    $('.flyer-desc-d.darkclass').css({
-        'background-color' : '#353941 !important',
-        'color' : '#eee !important'
-    });
-    
-    $('#flyer-d .flyer-title-d.darkclass').css({
-        'background-color' : '#353941 !important',
-        'color' : '#eee !important'
-    });
+    try {
+        $("#flyer-m").append('<br><h2 class="flyer-title-m"><a href="#" id="flyer-link-a"><i id="flyer-Sponsor-name-m"></i></a></h2><div class="entry"><desc><img class="flyer-image-m" id="flyer-image-m" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-m" class="flyer-iframe9-m"></iframe><div class="myVideo" id="flyer_video-m" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc" id="flyer-desc"></p></desc></div>');
+        console.log("Flyer: markup Loaded")
+        
+    } catch (error) {
+        console.log(error)
+    }
+    console.log("Flyer-markup Loaded.");
 });
-//flyer mobile
 $(document).ready(function () {
-    $("#flyer-d").append('<br><h2 class="flyer-title-d"><a href="#" id="flyer-link-a"><i id="flyer-Sponsor-name-d"></i></a></h2><div class="entry"><desc><img class="flyer-image-d" id="flyer-image-d" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-d" class="flyer-iframe9-d"></iframe><div class="myVideo" id="flyer_video-d" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc" id="flyer-desc"></p></desc></div>');
-    $("#flyer-m").append('<br><h2 class="flyer-title-m"><a href="#" id="flyer-link-a"><i id="flyer-Sponsor-name-m"></i></a></h2><div class="entry"><desc><img class="flyer-image-m" id="flyer-image-m" src="/src/home/shared/images/HER.PNG" alt="" title="this is not the right image.." style="display:none;" /><iframe id="flyer-frame-m" class="flyer-iframe9-m"></iframe><div class="myVideo" id="flyer_video-m" data-video="/src/flyer/video/sample.mp4" data-poster="/src/flyer/video/sample.jpg" data-type="video/mp4"></div><p class="flyer-desc" id="flyer-desc"></p></desc></div>');
     // Flyer items not locked due to Device
     $("#flyer-Sponsor-name-m").append('A Word From Our Sponsor:'); // top name
     $("#flyer-link-a").attr('a', '#'); // href ro sponsor
@@ -221,3 +95,6 @@ $(document).ready(function ($) {
 console.log('flyer enable/disable conf loaded')
 // <div id="flyer"></div>
 // video stuff RTOP_VideoPlayer in LICENSE /src/flyer/video/LICENSE
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="/flyer.css"/>');// YEs there is an error for a Reason. having to do with CORS. i hate apache2.
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://cdn.nrrinc.net/flyer/rtop.videoPlayer.1.0.2.min.css" type="text/css"/>');
+$('head').append('<link rel="stylesheet" type="text/css" crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" type="text/css">');

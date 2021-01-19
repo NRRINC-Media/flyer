@@ -1,0 +1,16 @@
+var flyerconf = {
+    'flyer-aid':'',
+    'flyer-Sponsor-name':'A Word From Our Sponsor: Crispy',
+    'flyer-link-href':'#',
+    'flyer-frame-src':'/tests/4/src/ad.html',
+    'flyer-frame-rp':'unsafe-url',
+    'flyer-desc':'your ad desc',
+    'flyer-video':'mkv.mp4',
+    'flyer-poster':'png.jpg',
+    'show-frame':'1',
+    'show-video':'1',
+    'show-img':'1',
+    'flyer-img-title':'title',
+    'flyer-img-src':'png.jpg',
+    'flyer-note':'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer',
+}
