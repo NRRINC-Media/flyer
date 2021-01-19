@@ -1,16 +1,15 @@
-var flyerconf = {
-    'flyer-aid':'',
-    'flyer-Sponsor-name':'A Word From Our Sponsor: Crispy',
-    'flyer-link-href':'#',
-    'flyer-frame-src':'/tests/4/src/ad.html',
-    'flyer-frame-rp':'unsafe-url',
-    'flyer-desc':'your ad desc',
-    'flyer-video':'mkv.mp4',
-    'flyer-poster':'png.jpg',
-    'show-frame':'1',
-    'show-video':'1',
-    'show-img':'1',
-    'flyer-img-title':'title',
-    'flyer-img-src':'png.jpg',
-    'flyer-note':'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer',
-}
+//flyer conf
+localStorage.setItem('flyer-aid','')
+localStorage.setItem('flyer-title','A Word From Our Sponsor: Crispy')
+localStorage.setItem('flyer-link-href','#')
+localStorage.setItem('flyer-frame-src','/tests/4/src/ad.html')
+localStorage.setItem('flyer-frame-rp','unsafe-url')
+localStorage.setItem('flyer-desc','your ad desc')
+localStorage.setItem('flyer-video','mkv.mp4')
+localStorage.setItem('flyer-poster','png.jpg')
+localStorage.setItem('show-frame','1')
+//localStorage.setItem('show-video','1') DEP
+localStorage.removeItem('show-img','1')
+localStorage.setItem('flyer-img-title','title')
+localStorage.setItem('flyer-img-src','png.jpg')
+localStorage.setItem('flyer-note','Hey! Welcome to Flyer! http://git.nrrinc.net/flyer')
