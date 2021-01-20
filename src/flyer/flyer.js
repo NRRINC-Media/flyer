@@ -147,7 +147,16 @@ function videoEnded() {
 $(document).ready(function () {
     flyerloadcount();
 });
-/*
+$(document).ready(function () {
+        $.ajax({
+            url : "/offsite/counter",
+            dataType: "text",
+            success : function (data) {
+                $(".text").append("Flyer Load Number: " + data);
+            }
+        });
+});
+
 function flyerloadcount() {
     // function below will run clear.php?h=michael
     $.ajax({
@@ -166,7 +175,6 @@ function flyerclick() {
         console.log("Flyer: Clicked +1")
       });
 }
-*/
 // Types of Info Flyer Will Collect *in nginx, behind a Proxy.
 /*
 IP Address (Deleted every 14 Days)
