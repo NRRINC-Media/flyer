@@ -67,6 +67,9 @@ $(document).ready(function () {
         console.error('Flyer: div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.');
     };
 });
+//
+//
+//
 $(document).ready(function ($) {
     if ($("#flyer").length) {
     var mode = localStorage.getItem('ad');
@@ -78,7 +81,6 @@ $(document).ready(function ($) {
         console.log("Flyer: Hidden");
         localStorage.setItem('ad', 'hide');
     });
-
     $("#yesfly").click(function () {
         $("#flyer").removeClass("hide");
         console.log("Flyer: Shown");
@@ -91,6 +93,9 @@ $(document).ready(function ($) {
         $("#yesfly").remove();
 };
 });
+//
+//
+//
 function rmvflyer() {
     $("#flyer-xbtn").prop('disabled', true);
     $("#flyer-xbtn").slideUp(1500)
