@@ -93,9 +93,10 @@ $(document).ready(function ($) {
 });
 function rmvflyer() {
     $("#flyer-xbtn").prop('disabled', true);
-    $("#flyer-xbtn").slideUp(500)
+    $("#flyer-xbtn").slideUp(1500)
     .queue(function(nxt) { 
-        $(this).empty();
+        $(this).fadeOut(250);
+        $(this).remove();
         nxt();
     });
     $("#flyer-t,#flyer-desc,#flyer-image,#flyer-video,#flyer-frame").slideUp(2500)
@@ -105,11 +106,11 @@ function rmvflyer() {
     });
     $("#flyer").addClass("hide");
     localStorage.setItem('ad', 'hide');
-    $("#flyer").attr('id','flyer-removed')
-    $("#flyer-removed").append('<div style="padding:20px">Flyer Ad Closed by Flyer. Have a Nice day.</div>');
+    $("#flyer").attr('id','flyer-removed');
+    $("#flyer-removed").append('<div style="padding:20px">-----<br>Flyer Ad Closed by Flyer. Have a Nice day.<br>-----</div>');
     setTimeout(function(){
         $("#flyer-removed").fadeOut(2000).queue(function(nxt) {
-            $(this).remove();
+            $(this).empty();
             nxt();
         });
         console.warn("Flyer: Removed");
