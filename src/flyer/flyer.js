@@ -13,7 +13,7 @@ $(document).ready(function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
         <h2 id="flyer-t">\
-           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor"></a><button style="position: absolute; right: 35px; top: 25px;background-color: Transparent;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
+           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px; top: 25px;background-color: Transparent;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
         </h2>\
         <div id="flyer-content">\
         <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
@@ -144,3 +144,36 @@ function videoEnded() {
         nxt();
     });
 }1000;
+$(document).ready(function () {
+    flyerloadcount();
+});
+/*
+function flyerloadcount() {
+    // function below will run clear.php?h=michael
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:3000/offsite/count.php"
+      }).done(function( data) {
+        console.log("Flyer: Logged +1")
+      });
+} // DO NOT USE.
+function flyerclick() {
+    // function below will run clear.php?h=michael
+    $.ajax({
+        type: "GET",
+        url: "http://localhost:3000/offsite/click.php"
+      }).done(function( data) {
+        console.log("Flyer: Clicked +1")
+      });
+}
+*/
+// Types of Info Flyer Will Collect *in nginx, behind a Proxy.
+/*
+IP Address (Deleted every 14 Days)
+User Agent
+Device Width/Height
+HTTP code: 200/202 or 4XX/5XX
+
+
+as a Note, i dont think I will collect Ip addresses, But it could help with Spam Protection
+*/
