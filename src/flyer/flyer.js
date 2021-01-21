@@ -1,10 +1,5 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
 (function() {
-    var conf = document.createElement('script'); conf.type = 'text/javascript';
-    conf.src = '/src/flyer/flyer-conf.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(conf);
-  })();
-(function() {
     var css = document.createElement('link'); css.rel = 'stylesheet';
     css.href = '/src/flyer/flyer.css';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
@@ -24,41 +19,36 @@ $(document).ready(function () {
         <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
         </div>');
         $(document).ready(function () {
-                $("#flyer-frame").attr('src', localStorage.getItem("flyer-frame-src")); // link to html, htm or img.
+                $("#flyer-frame").attr('src', flyer.flyer_frame_src); // link to html, htm or img.
                 $("#flyer-frame").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
                 $("#flyer-frame").attr('name', 'Flyer'); // name of iframe ALT
                 $("#flyer-frame").attr('allowfullscreen', 'false');  // do not change.
                 $("#flyer-frame").attr('allowpaymentrequest', 'false'); // do not allow payments
-                $("#flyer-frame").attr('referrerpolicy', localStorage.getItem("flyer-frame-rp")); // what kind of URL is it? Be unsafe if you dont know.
-                $("#flyer-image").attr('src', localStorage.getItem("flyer-img-src")); // img SRC Gif, webm, PNG or jpeg.
-                $("#flyer-image").attr('title', localStorage.getItem("flyer-img-title")); // title of img, alt
-                $("#flyer-image").attr('alt', localStorage.getItem("flyer-img-alt")); // alt of an alt
-                $("#flyer_video").attr('data-video', localStorage.getItem("flyer-video-data")); //mp4 only
-                $("#flyer_video").attr('data-poster', localStorage.getItem("flyer-video-poster")); // poster "tumbnail/cover"
+                $("#flyer-frame").attr('referrerpolicy', flyer.flyer_frame_rp); // what kind of URL is it? Be unsafe if you dont know.
+                $("#flyer-image").attr('src', flyer.flyer_img_src); // img SRC Gif, webm, PNG or jpeg.
+                $("#flyer-image").attr('title', flyer.flyer_img_title); // title of img, alt
+                $("#flyer-image").attr('alt',flyer.flyer_img_title); // alt of an alt
                 $("#flyer_video").attr('data-type', 'video/mp4'); // data type
-                $("#flyer-title").append(localStorage.getItem("flyer-title")); // top name
-                $("#flyer-title").attr('href',localStorage.getItem("flyer-link-href")); 
-                $("#flyer-desc").append('Your ad here'); // Bottom text
-                $("#flyer-desc").attr('alt', 'ad desc.'); // bottom alt text
+                $("#flyer-title").append(flyer.flyer_title); // top name
+                $("#flyer-title").attr('href',flyer.flyer_title_href); 
+                $("#flyer-desc").append(flyer.flyer_desc); // Bottom text
+                $("#flyer-desc").attr('alt', flyer.flyer_desc); // bottom alt text
                 function flyerdetect() {
-                    if ("show-img" in localStorage) {
+                    if (flyer.flyer_show === 'img') {
+                        $("#flyer-frame").remove();
+                        $("#flyer-video").remove();
                         $("#flyer-image").show();
-                            console.log('Flyer: img');
-                        } else {
-                            $("#flyer-image").remove();
-                        };
-                    if ("show-frame" in localStorage) {
-                        $("#flyer-frame").show();
-                            console.log('Flyer: frame'); 
-                        } else { 
-                            $("#flyer-frame").remove();
-                        };
-                    if ("show-show" in localStorage) {
+                    } else if (flyer.flyer_show === 'vid') {
+                        $("#flyer-image").remove();
+                        $("#flyer-frame").remove();
                         $("#flyer-video").show();
-                            console.log('Flyer: frame'); 
-                        } else { 
-                            $("#flyer-video").remove();
-                    };
+                    } else if (flyer.flyer_show === 'frm') {
+                        $("#flyer-image").remove();
+                        $("#flyer-video").remove();
+                        $("#flyer-frame").show();
+                    } else {
+                        console.log("error")
+                    }
                 };
                 flyerdetect();
                 console.log("Flyer: Im Locked and Loaded. Bring. it. on.");
@@ -104,9 +94,18 @@ function rmvflyer() {
         $(this).remove();
         nxt();
     });
-    $("#flyer-t,#flyer-desc,#flyer-image,#flyer-video,#flyer-frame").slideUp(2500)
+    $("#flyer-desc").slideUp(750)
     .queue(function(nxt) { 
         $(this).empty();
+        $("#flyer-image,#flyer-video,#flyer-frame").slideUp(750);
+        $("#flyer-t").slideUp(3500).queue(function(nxt) {
+            $("#flyer-t").remove();
+            $("#flyer-image,#flyer-video,#flyer-frame").remove()
+            // keep under 5000 total
+            .queue(function(nxt){
+
+            });
+        });
         nxt();
     });
     $("#flyer").addClass("hide");
@@ -114,7 +113,7 @@ function rmvflyer() {
     $("#flyer").attr('id','flyer-removed');
     $("#flyer-removed").append('<div style="padding:20px">-----<br>Flyer Ad Closed by Flyer. Have a Nice day.<br>-----</div>');
     setTimeout(function(){
-        $("#flyer-removed").fadeOut(2000).queue(function(nxt) {
+        $("#flyer-removed").slideUp(2000).queue(function(nxt) {
             $(this).empty();
             nxt();
         });
