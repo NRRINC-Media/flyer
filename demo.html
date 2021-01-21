@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer v4</title>
+    <script>
+        flyer = {
+            flyer_aid: '',
+            flyer_title: 'A Word From Our Sponsor: Crispy',
+            flyer_title_link: 'http://exmaple.com',
+            flyer_frame_src: '/src/ad.html',
+            flyer_frame_rp: 'unsafe-url',
+            flyer_desc:'your ad desc1',
+            flyer_video:'/link/to/mp4.mp4',
+            flyer_show: 'img', //img/vid/frm
+            flyer_img_title: 'my cool image',
+            flyer_img_src: "https://via.placeholder.com/500x375",
+            flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer'",
+    }
+    </script>
+    <script src="/src/flyer/jquery.js"></script>
+    <script src="/src/flyer/flyer.js"></script>
+</head>
+
+<body style="background-color: lightblue;">
+    <div id="flyer"></div>
+    <button id="yesfly">Show Flyer</button>
+    <button id="nofly">Hide/Remove Flyer</button>
+    <div class="text"></div>
+</body>
+
+</html>
