@@ -1,6 +1,6 @@
 # Welcome to Flyer
 ##### _what is flyer? flyer is a Simple ad script that helps small websites have a Single ad. and allow the use to have full control over it._
-![alt text](https://nrrinc.net/src/flyer/flyer-logo.png)
+<img src="https://raw.githubusercontent.com/Nolanrulesroblox/Flyer/master/offsite/flyer-logo.png" alt="drawing" width="200"/></img>
 ---
 # How to use
 ## Add to head
