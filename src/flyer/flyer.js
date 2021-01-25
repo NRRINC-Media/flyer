@@ -26,7 +26,7 @@ $(document).ready(function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
         <h2 id="flyer-t">\
-           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px; top: 25px;background-color: Transparent;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
+           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px;background-color: Transparent;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
         </h2>\
         <div id="flyer-content">\
         <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
