@@ -1,9 +1,27 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
-(function() {
-    var css = document.createElement('link'); css.rel = 'stylesheet';
-    css.href = '/src/flyer/flyer.css';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
-  })();
+if (flyer.flyer_note == 'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer') {
+    // do nothing
+} else {
+    console.log("add flyer_note to your config. where you set flyer up. Copy and paste.");
+    console.warn('flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer",');
+    youforgottoaddthenote();
+    // the reason for this, i have no idea. you can remove these lines if you want (remove lines 2 - 9)
+}
+$(document).ready(function () {
+    if (flyer.flyer_css === 'yes') {
+        (function() {
+            var css = document.createElement('link'); css.rel = 'stylesheet';
+            css.href = '/src/flyer/flyer.css';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
+          })();
+    } else {
+        (function() {
+            var css = document.createElement('link'); css.rel = 'stylesheet';
+            css.href = flyer.flyer_css;
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
+          })();
+    }
+});
 $(document).ready(function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
@@ -19,6 +37,7 @@ $(document).ready(function () {
         <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
         </div>');
         $(document).ready(function () {
+                flyerdetect();
                 $("#flyer-frame").attr('src', flyer.flyer_frame_src); // link to html, htm or img.
                 $("#flyer-frame").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
                 $("#flyer-frame").attr('name', 'Flyer'); // name of iframe ALT
@@ -28,29 +47,11 @@ $(document).ready(function () {
                 $("#flyer-image").attr('src', flyer.flyer_img_src); // img SRC Gif, webm, PNG or jpeg.
                 $("#flyer-image").attr('title', flyer.flyer_img_title); // title of img, alt
                 $("#flyer-image").attr('alt',flyer.flyer_img_title); // alt of an alt
-                $("#flyer_video").attr('data-type', 'video/mp4'); // data type
-                $("#flyer-title").append(flyer.flyer_title); // top name
+                $("#flyer_video").attr('data-type', 'video/mp4'); 
+                $("#flyer-title").append(flyer.flyer_title);
                 $("#flyer-title").attr('href',flyer.flyer_title_href); 
-                $("#flyer-desc").append(flyer.flyer_desc); // Bottom text
-                $("#flyer-desc").attr('alt', flyer.flyer_desc); // bottom alt text
-                function flyerdetect() {
-                    if (flyer.flyer_show === 'img') {
-                        $("#flyer-frame").remove();
-                        $("#flyer-video").remove();
-                        $("#flyer-image").show();
-                    } else if (flyer.flyer_show === 'vid') {
-                        $("#flyer-image").remove();
-                        $("#flyer-frame").remove();
-                        $("#flyer-video").show();
-                    } else if (flyer.flyer_show === 'frm') {
-                        $("#flyer-image").remove();
-                        $("#flyer-video").remove();
-                        $("#flyer-frame").show();
-                    } else {
-                        console.log("error")
-                    }
-                };
-                flyerdetect();
+                $("#flyer-desc").append(flyer.flyer_desc); 
+                $("#flyer-desc").attr('alt', flyer.flyer_desc); 
                 console.log("Flyer: Im Locked and Loaded. Bring. it. on.");
         });
     } else {
@@ -174,6 +175,23 @@ function flyerclick() {
         console.log("Flyer: Clicked +1")
       });
 }
+function flyerdetect() {
+    if (flyer.flyer_show === 'img') {
+        $("#flyer-frame").remove();
+        $("#flyer-video").remove();
+        $("#flyer-image").show();
+    } else if (flyer.flyer_show === 'vid') {
+        $("#flyer-image").remove();
+        $("#flyer-frame").remove();
+        $("#flyer-video").show();
+    } else if (flyer.flyer_show === 'frm') {
+        $("#flyer-image").remove();
+        $("#flyer-video").remove();
+        $("#flyer-frame").show();
+    } else {
+        console.log("error")
+    }
+};
 // Types of Info Flyer Will Collect *in nginx, behind a Proxy.
 /*
 IP Address (Deleted every 14 Days)

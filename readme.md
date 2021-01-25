@@ -20,41 +20,46 @@
 ```html
     <button id="yesfly">Yes ads</button>
     <button id="nofly">No ads</button>
-    <!-- not needed to run. -->
+    <!-- not needed to run. default: Yes ads-->
 ```
 ## Flyer Controls
 ```html
     <script>
         //add above flyer.js
         flyer = {
-            flyer_aid: '',
-            flyer_title: 'A Word From Our Sponsor: Crispy',
-            flyer_title_link: 'http://exmaple.com',
+            flyer_css: "yes", 
+            flyer_show: 'img', 
+            flyer_aid: '', 
+            flyer_title: 'A Word From Our Sponsor: Crispy', 
+            flyer_title_link: 'http://exmaple.com', 
             flyer_frame_src: '/src/ad.html',
             flyer_frame_rp: 'unsafe-url',
             flyer_desc:'your ad desc1',
             flyer_video:'/link/to/mp4.mp4',
-            flyer_show: 'img', //img/vid/frm
             flyer_img_title: 'my cool image',
             flyer_img_src: "https://via.placeholder.com/500x375",
-            flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer'",
+            flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer",
     }
     </script>
 ```
 # Updates:
 ```code
-+ Video support (Working)
-+ Flyer script Conf (on-page)
-- removed All but 1 use of Local Storage
-~ changed How flyer loads, and How Flyer is Handled 
++ flyer-min.js
++ Small fixes
++ Mockup page (no scipts, Just to test your ad, IMG only.)
+~ changed some ways Flyer Loads
++ Add new flyer_css. You can Link a CSS URL instead of the Default.
+
+Check "demo.html" for all of Flyer Options.
 ```
-```
-update key:
-+ Added
-/ Fixed
-~ changed
-- removed
-```
+---
+update key: <br>
+<span>+</span> Added <br>
+<span>/</span> Fixed<br>
+<span>~</span> changed<br>
+<span>-</span> removed<br>
+<br>
+<br>
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpledges&style=plastic)](https://patreon.com/nrrinc)
 
 // do note, the Flyer JS on the Github.io Site is NOT up to date. It is updated once every 2 weeks.
