@@ -192,6 +192,13 @@ function flyerdetect() {
         console.log("error")
     }
 };
+function flyerrand() {
+    const Flyerconf = ["FlyerconfA", "FlyerconfB", "FlyerconfC", "FlyerconfD", "FlyerconfE", "FlyerconfF", "FlyerconfG"];
+
+    const random = Math.floor(Math.random() * Flyerconf.length);
+    Flyerconf[random];
+}
+flyerrand();
 // Types of Info Flyer Will Collect *in nginx, behind a Proxy.
 /*
 IP Address (Deleted every 14 Days)
