@@ -190,7 +190,7 @@ function flyerinit() {
         if (flyer.flyer_css === 'yes') {
             (function() {
                 var css = document.createElement('link'); css.rel = 'stylesheet';
-                css.href = '/src/flyer/flyer.css';
+                css.href = '/src/flyer/flyer.scss';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
               })();
         } else {
