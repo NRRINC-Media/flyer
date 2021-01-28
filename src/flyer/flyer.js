@@ -1,29 +1,7 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
-if (flyer.flyer_note == 'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer') {
-    // do nothing
-} else {
-    console.log("add flyer_note to your config. where you set flyer up. Copy and paste.");
-    console.warn('flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer",');
-    youforgottoaddthenote();
-    // the reason for this, i have no idea. you can remove these lines if you want (remove lines 2 - 9)
-}
+flyerinit();
 $(document).ready(function () {
-    if (flyer.flyer_css === 'yes') {
-        (function() {
-            var css = document.createElement('link'); css.rel = 'stylesheet';
-            css.href = '/src/flyer/flyer.css';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
-          })();
-    } else {
-        (function() {
-            var css = document.createElement('link'); css.rel = 'stylesheet';
-            css.href = flyer.flyer_css;
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
-          })();
-    }
-});
-$(document).ready(function () {
-    if ($("#flyer").length) {
+    if ($("#flyer").length) {flyer
         $("#flyer").append('\
         <h2 id="flyer-t">\
            <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px;background-color: Transparent;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
@@ -199,6 +177,31 @@ function flyerrand() {
     Flyerconf[random];
 }
 flyerrand();
+function flyerinit() {
+    if (flyer.flyer_note == 'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer') {
+        // do nothing
+    } else {
+        console.log("add flyer_note to your config. where you set flyer up. Copy and paste.");
+        console.warn('flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer",');
+        youforgottoaddthenote();
+        // the reason for this, i have no idea. you can remove these lines if you want (remove lines 2 - 9)
+    }
+    $(document).ready(function () {
+        if (flyer.flyer_css === 'yes') {
+            (function() {
+                var css = document.createElement('link'); css.rel = 'stylesheet';
+                css.href = '/src/flyer/flyer.css';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
+              })();
+        } else {
+            (function() {
+                var css = document.createElement('link'); css.rel = 'stylesheet';
+                css.href = flyer.flyer_css;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
+              })();
+        }
+    });
+}
 // Types of Info Flyer Will Collect *in nginx, behind a Proxy.
 /*
 IP Address (Deleted every 14 Days)

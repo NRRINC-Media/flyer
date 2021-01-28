@@ -1,8 +1,8 @@
 To do:
 
-Add Single Cookie for On and Off
-Add More tracking (simple, but not crazy)
-Add 2 conf loaders
+Add Single Cookie for On and Off <br>
+Add More tracking (simple, but not crazy)<br>
+Add 2 conf loaders<br>
 <!--
 
 <!DOCTYPE html>
