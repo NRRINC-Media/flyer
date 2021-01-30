@@ -1,9 +1,7 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
+let flyer;
+let $;
 flyerinit();
-if (typeof flyer != "undefined") {
- } else {
-     console.warn("Flyer: Conf Not Found, Loading Default")
- }
 $(document).ready(function () {
     if ($("#flyer").length) {flyer
         $("#flyer").append('\
@@ -182,12 +180,6 @@ function flyerrand() {
 }
 flyerrand();
 function flyerinit() {
-    try {
-        flyer
-    } catch (error) {
-        console.error("Flyer: Add Conf to page. Above Flyer.js")
-        stop();
-    }
     if (flyer.flyer_note == 'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer') {
         // do nothing
     } else {
@@ -200,7 +192,7 @@ function flyerinit() {
         if (flyer.flyer_css === 'yes') {
             (function() {
                 var css = document.createElement('link'); css.rel = 'stylesheet';
-                css.href = '/src/flyer/flyer.css';
+                css.href = '/src/flyer/flyer.scss';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
               })();
         } else {
