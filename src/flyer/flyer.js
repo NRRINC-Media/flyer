@@ -33,11 +33,12 @@ $(document).ready(function () {
                 $("#flyer-title").append(flyer.flyer_title);
                 $("#flyer-title").attr('href',flyer.flyer_title_href); 
                 $("#flyer-desc").append(flyer.flyer_desc); 
-                $("#flyer-desc").attr('alt', flyer.flyer_desc); 
+                $("#flyer-desc").attr('alt', flyer.flyer_desc);
+                flyerloadcount(); 
                 console.log("Flyer: Im Locked and Loaded. Bring. it. on.");
         });
     } else {
-        console.error('Flyer: div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.');
+        console.log('%c Flyer: div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.', 'border: 8px none #00FF16; border-radius: 40px;background-color:black; color: #00FF80;');
     };
 });
 //
@@ -126,9 +127,6 @@ function videoEnded() {
         nxt();
     });
 }1000;
-$(document).ready(function () {
-    flyerloadcount();
-});
 $(document).ready(function () {
         $.ajax({
             url : "/offsite/counter",
