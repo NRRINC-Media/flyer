@@ -1,14 +1,10 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
 flyerinit();
-if (typeof flyer != "undefined") {
- } else {
-     console.warn("Flyer: Conf Not Found, Loading Default")
- }
 $(document).ready(function () {
     if ($("#flyer").length) {flyer
         $("#flyer").append('\
         <h2 id="flyer-t">\
-           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px;background-color: Transparent;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
+           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px;background-color: white;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
         </h2>\
         <div id="flyer-content">\
         <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
@@ -41,9 +37,6 @@ $(document).ready(function () {
         console.log('%c Flyer: div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.', 'border: 8px none #00FF16; border-radius: 40px;background-color:black; color: #00FF80;');
     };
 });
-//
-//
-//
 $(document).ready(function ($) {
     if ($("#flyer").length) {
     var mode = localStorage.getItem('ad');
@@ -60,16 +53,16 @@ $(document).ready(function ($) {
         console.log("Flyer: Shown");
         localStorage.setItem('ad', null);
     });
-    console.log('Flyer buttons loaded');
+        if($("#nofly, #yesfly").length) {
+            console.log('Flyer: buttons Found and loaded');
+        } 
+        // do nothing
     } else {
         console.error('Flyer: Buttons disabled due to div not found.');
         $("#nofly").remove();
         $("#yesfly").remove();
 };
 });
-//
-//
-//
 function rmvflyer() {
     $("#flyer-xbtn").prop('disabled', true);
     $("#flyer-xbtn").slideUp(1500)
@@ -95,9 +88,9 @@ function rmvflyer() {
     $("#flyer").addClass("hide");
     localStorage.setItem('ad', 'hide');
     $("#flyer").attr('id','flyer-removed');
-    $("#flyer-removed").append('<div style="padding:20px">-----<br>Flyer Ad Closed by Flyer. Have a Nice day.<br>-----</div>');
+    $("#flyer-removed").append('<div style="padding:20px">-----<br>Flyer Ad Closed by Flyer.<br>-----</div>');
     setTimeout(function(){
-        $("#flyer-removed").slideUp(2000).queue(function(nxt) {
+        $("#flyer-removed").slideDown(2000).queue(function(nxt) {
             $(this).empty();
             nxt();
         });
@@ -105,27 +98,12 @@ function rmvflyer() {
     }, 5000);
 };
 function videoEnded() {
-    console.log("Flyer: Video done");
-    $('#flyer-video').fadeOut(2500)
+    $('#flyer-video').slideUp(1500)
             .queue(function(nxt) { 
-                $(this).remove();
+                $("#flyer-video").remove();
+                $("#flyer-image").slideDown(1500);
                 nxt();
             });
-    $('#flyer').fadeOut(3500)
-            .queue(function(nxt) { 
-                $(this).remove();
-                nxt();
-            });
-    $('#flyer-t').fadeOut(2500)
-    .queue(function(nxt) { 
-        $(this).remove();
-        nxt();
-    });
-    $('#flyer-desc').fadeOut(2500)
-    .queue(function(nxt) { 
-        $(this).remove();
-        nxt();
-    });
 }1000;
 $(document).ready(function () {
         $.ajax({
@@ -136,9 +114,7 @@ $(document).ready(function () {
             }
         });
 });
-
 function flyerloadcount() {
-    // function below will run clear.php?h=michael
     $.ajax({
         type: "GET",
         url: "http://localhost:3000/offsite/count.php"
@@ -147,7 +123,6 @@ function flyerloadcount() {
       });
 } // DO NOT USE.
 function flyerclick() {
-    // function below will run clear.php?h=michael
     $.ajax({
         type: "GET",
         url: "http://localhost:3000/offsite/click.php"
@@ -161,7 +136,7 @@ function flyerdetect() {
         $("#flyer-video").remove();
         $("#flyer-image").show();
     } else if (flyer.flyer_show === 'vid') {
-        $("#flyer-image").remove();
+        $("#flyer-image").hide();
         $("#flyer-frame").remove();
         $("#flyer-video").show();
     } else if (flyer.flyer_show === 'frm') {
@@ -184,7 +159,24 @@ function flyerinit() {
         flyer
     } catch (error) {
         console.error("Flyer: Add Conf to page. Above Flyer.js")
-        stop();
+         //flyer Default Backup
+        flyer = {
+            flyer_css: "yes", // Yes or url to css
+            flyer_show: 'img', //img/vid/frm
+            flyer_aid: 'FLYER IS NOT WORKING', // Unused
+            flyer_title: 'Default Flyer Config', // title
+            flyer_title_link: 'http://git.nrrinc.net/flyer', //title link
+            flyer_frame_src: '/src/ad.html', // src to iframe, if iframe is set
+            flyer_frame_rp: 'unsafe-url', // if url is on another server, change
+            flyer_desc:'Flyer is not working ATM...', // Bottom text
+            flyer_video:'/link/to/mp4.mp4', // video link (NOT YOUTUBE.), if video is set
+            flyer_img_title: 'FlyerJS', // title of image, if image is set
+            flyer_img_src: "/src/flyer/flyer.svg", // image src, if image is set
+            flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer", // unused, but to be used
+            flyer_ajax1: "",
+            flyer_ajax2: "",
+            flyer_useid: "TBD", // Random MD5
+        }
     }
     if (flyer.flyer_note == 'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer') {
         // do nothing
@@ -216,7 +208,6 @@ IP Address (Deleted every 14 Days)
 User Agent
 Device Width/Height
 HTTP code: 200/202 or 4XX/5XX
-
 
 as a Note, i dont think I will collect Ip addresses, But it could help with Spam Protection
 */
