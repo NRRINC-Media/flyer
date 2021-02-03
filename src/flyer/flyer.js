@@ -117,7 +117,7 @@ $(document).ready(function () {
 function flyerloadcount() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:3000/offsite/count.php"
+        url: "http://localhost:3000/offsite/count.php?utm=nrrinc&utm_campaign=flyer-demo"
       }).done(function( data) {
         console.log("Flyer: Logged +1")
       });
@@ -125,7 +125,7 @@ function flyerloadcount() {
 function flyerclick() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:3000/offsite/click.php"
+        url: "http://localhost:3000/offsite/click.php?utm=nrrinc&utm_campaign=flyer-demo-click"
       }).done(function( data) {
         console.log("Flyer: Clicked +1")
       });
@@ -139,7 +139,7 @@ function flyerdetect() {
         $("#flyer-image").hide();
         $("#flyer-frame").remove();
         $("#flyer-video").show();
-    } else if (flyer.flyer_show === 'frm') {
+    } else if (flyer.flyer_show === 'ifm') {
         $("#flyer-image").remove();
         $("#flyer-video").remove();
         $("#flyer-frame").show();
@@ -147,12 +147,6 @@ function flyerdetect() {
         console.log("error")
     }
 };
-function flyerrand() {
-    const Flyerconf = ["FlyerconfA", "FlyerconfB", "FlyerconfC", "FlyerconfD", "FlyerconfE", "FlyerconfF", "FlyerconfG"];
-
-    const random = Math.floor(Math.random() * Flyerconf.length);
-    Flyerconf[random];
-}
 flyerrand();
 function flyerinit() {
     try {
