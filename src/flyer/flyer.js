@@ -117,7 +117,7 @@ $(document).ready(function () {
 function flyerloadcount() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:3000/offsite/count.php?utm=nrrinc&utm_campaign=flyer-demo"
+        url: "http://localhost:3000/offsite/count.php"
       }).done(function( data) {
         console.log("Flyer: Logged +1")
       });
@@ -125,7 +125,7 @@ function flyerloadcount() {
 function flyerclick() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:3000/offsite/click.php?utm=nrrinc&utm_campaign=flyer-demo-click"
+        url: "http://localhost:3000/offsite/click.php"
       }).done(function( data) {
         console.log("Flyer: Clicked +1")
       });
