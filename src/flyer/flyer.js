@@ -4,7 +4,7 @@ $(document).ready(function () {
     if ($("#flyer").length) {flyer
         $("#flyer").append('\
         <h2 id="flyer-t">\
-           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px;background-color: white;cursor:pointer;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
+           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()"></a><button style="position: absolute; right: 35px;background-color: transparent;cursor:pointer;border:black 2px solid; border-radius: 4px;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
         </h2>\
         <div id="flyer-content">\
         <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
@@ -65,17 +65,16 @@ $(document).ready(function ($) {
 });
 function rmvflyer() {
     $("#flyer-xbtn").prop('disabled', true);
-    $("#flyer-xbtn").slideUp(1500)
+    $("#flyer-xbtn").fadeOut(750)
     .queue(function(nxt) { 
         $(this).fadeOut(250);
         $(this).remove();
         nxt();
     });
-    $("#flyer-desc").slideUp(750)
+    $("#flyer-desc,#flyer-image,#flyer-video,#flyer-frame,#flyer-t").slideUp(1500)
     .queue(function(nxt) { 
         $(this).empty();
-        $("#flyer-image,#flyer-video,#flyer-frame").slideUp(750);
-        $("#flyer-t").slideUp(3500).queue(function(nxt) {
+        $("").slideUp(750).queue(function(nxt) {
             $("#flyer-t").remove();
             $("#flyer-image,#flyer-video,#flyer-frame").remove()
             // keep under 5000 total
@@ -147,7 +146,6 @@ function flyerdetect() {
         console.log("error")
     }
 };
-flyerrand();
 function flyerinit() {
     try {
         flyer
@@ -196,6 +194,70 @@ function flyerinit() {
         }
     });
 }
+    var flycookietitle = "Cookies."; 
+    var flycookiedesc = "By using Flyer.js, You Allow For Some Tracking Technologies to Be Used. You can Disable Flyer "; 
+    var flycookielink = '<a onclick="rmvflyertwo()">Here</a>.'; 
+    var flyercookiebtn = "Ok! Got it."; 
+    function pureFadeIn(elem, display){
+      var el = document.getElementById(elem);
+      el.style.opacity = 0;
+      el.style.display = display || "block";
+      (function fade() {
+        var val = parseFloat(el.style.opacity);
+        if (!((val += .02) > 1)) {
+          el.style.opacity = val;
+          requestAnimationFrame(fade);
+        }
+      })();
+    };
+    function pureFadeOut(elem){
+      var el = document.getElementById(elem);
+      el.style.opacity = 1;
+      (function fade() {
+        if ((el.style.opacity -= .02) < 0) {
+          el.style.display = "none";
+        } else {
+          requestAnimationFrame(fade);
+        }
+      })();
+    };
+    function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {   
+        document.cookie = name+'=; Max-Age=-99999999;';  
+    }
+    function cookieConsent() {
+      if (!getCookie('flyercookie')) {
+        document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' + flycookietitle + '</a></div><div class="cookieDesc"><p>' + flycookiedesc + ' ' + flycookielink + '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' + flyercookiebtn + '</a></div></div>';
+        pureFadeIn("cookieConsentContainer");
+      }
+    }
+    window.onload = function() { cookieConsent(); };
+function purecookieDismiss() {
+    setCookie('flyercookie','1',7);
+    pureFadeOut("cookieConsentContainer");
+  }
+  function rmvflyertwo() {
+    rmvflyer();
+    purecookieDismiss();
+  }
 // Types of Info Flyer Will Collect *in nginx, behind a Proxy.
 /*
 IP Address (Deleted every 14 Days)
