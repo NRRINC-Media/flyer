@@ -1,0 +1,5 @@
+{
+    "workbench.editor.labelFormat": "short",
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.wrapTabs": true
+}
