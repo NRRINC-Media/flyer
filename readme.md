@@ -59,3 +59,5 @@ update key: <br>
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpledges&style=plastic)](https://patreon.com/nrrinc)
 
 // do note, the Flyer JS on the Github.io Site is NOT up to date. It is updated once every ~~2~~ weeks. <small>...<i>when i get aroud to it.. </i> </small>
+
+##### Notice: I do not work on flyer on weekends. Sorry.
