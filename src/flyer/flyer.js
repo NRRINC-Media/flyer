@@ -1,10 +1,8 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
 flyerinit();
 $(document).ready(function () {
-    if ($("#flyer").length) {flyer
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - Flyer Div found")
-        };
+    if ($("#flyer").length) {
+        flyer
         $("#flyer").append('\
         <h2 id="flyer-t">\
            <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()" rel="noreferrer"></a><button style="position: absolute; right: 35px;background-color: transparent;cursor:pointer;border:black 2px solid; border-radius: 4px;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
@@ -17,9 +15,6 @@ $(document).ready(function () {
         </video>\
         <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
         </div>');
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - Markup loaded")
-        };
         $(document).ready(function () {
                 flyerdetect();
                 $("#flyer-frame").attr('src', flyer.flyer_frame_src); // link to html, htm or img.
@@ -38,9 +33,6 @@ $(document).ready(function () {
                 $("#flyer-desc").attr('alt', flyer.flyer_desc);
                 flyerloadcount(); 
                 console.log("Flyer: Im Locked and Loaded. Bring. it. on.");
-                if (flyer.flyer_debug == 'true') {
-                    console.log("Flyer: Debug Mode - attr loaded")
-                };
         });
     } else {
         console.log('%c Flyer: div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.', 'border: 8px none #00FF16; border-radius: 40px;background-color:black; color: #00FF80;');
@@ -48,9 +40,6 @@ $(document).ready(function () {
 });
 $(document).ready(function ($) {
     if ($("#flyer").length) {
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - Flyer Buttons Found")
-        };
     var mode = localStorage.getItem('ad');
     if (mode)
         $('#flyer').addClass(mode);
@@ -67,16 +56,10 @@ $(document).ready(function ($) {
     });
         if($("#nofly, #yesfly").length) {
             console.log('Flyer: buttons Found and loaded');
-            if (flyer.flyer_debug == 'true') {
-                console.log("Flyer: Debug Mode - Flyer buttons Loaded")
-            };
         } 
         // do nothing
     } else {
         console.error('Flyer: Buttons disabled due to div not found.');
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - Flyer Buttons not found on page")
-        };
         $("#nofly").remove();
         $("#yesfly").remove();
 };
@@ -113,9 +96,6 @@ function rmvflyer() {
         });
         console.warn("Flyer: Removed");
     }, 5000);
-    if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - Remove Flyer Worked")
-    };
 };
 function videoEnded() {
     $('#flyer-video').slideUp(1500)
@@ -124,9 +104,6 @@ function videoEnded() {
                 $("#flyer-image").slideDown(1500);
                 nxt();
             });
-            if (flyer.flyer_debug == 'true') {
-                console.log("Flyer: Debug Mode - Video end")
-            };
 }1000;
 $(document).ready(function () {
         $.ajax({
@@ -136,9 +113,6 @@ $(document).ready(function () {
                 $(".text").append("Flyer Load Number: " + data);
             }
         });
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - Video ended")
-        };
 });
 function flyerloadcount() {
     $.ajax({
@@ -147,9 +121,6 @@ function flyerloadcount() {
       }).done(function( data) {
         console.log("Flyer: Logged +1")
       });
-      if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - AJAX 1 worked")
-    };
 } // DO NOT USE.
 function flyerclick() {
     $.ajax({
@@ -158,43 +129,25 @@ function flyerclick() {
       }).done(function( data) {
         console.log("Flyer: Clicked +1")
       });
-      if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - AJAX 2 worked")
-    };
 }
 function flyerdetect() {
     if (flyer.flyer_show === 'img') {
         $("#flyer-frame").remove();
         $("#flyer-video").remove();
         $("#flyer-image").show();
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - IMG loaded")
-        };
     } else if (flyer.flyer_show === 'vid') {
         $("#flyer-image").hide();
         $("#flyer-frame").remove();
         $("#flyer-video").show();
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - VID loaded")
-        };
     } else if (flyer.flyer_show === 'ifm') {
         $("#flyer-image").remove();
         $("#flyer-video").remove();
         $("#flyer-frame").show();
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - IFM loaded")
-        };
     } else {
         console.error("Flyer: No IFM/VID/IMG set.")
-        if (flyer.flyer_debug == 'true') {
-            console.log("Flyer: Debug Mode - No IFM/VID/IMG set.")
-        };
     }
 };
 function flyerinit() {
-    if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - Flyer init Worked")
-    };
     try {
         flyer
     } catch (error) {
@@ -216,12 +169,9 @@ function flyerinit() {
             flyer_ajax1: "",
             flyer_ajax2: "",
             flyer_useid: "TBD", // Random MD5
-            flyer_debug:"true",
+            flyer_debug:"null",//<-- DEBUG IS NOT HERE FOR A REASON. DONT FUCK WITH IT -nolan 2021
         }
     }
-    if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - Flyer config Found")
-    };
     if (flyer.flyer_note == 'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer') {
         // do nothing
     } else {
@@ -230,9 +180,6 @@ function flyerinit() {
         youforgottoaddthenote();
         // the reason for this, i have no idea. you can remove these lines if you want (remove lines 2 - 9)
     }
-    if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - Flyer Note found")
-    };
     $(document).ready(function () {
         if (flyer.flyer_css === 'yes') {
             (function() {
@@ -240,34 +187,19 @@ function flyerinit() {
                 css.href = '/src/flyer/flyer.css';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
               })();
-              if (flyer.flyer_debug == 'true') {
-                console.log("Flyer: Debug Mode - Flyer.CSS loaded")
-            };
         } else {
             (function() {
                 var css = document.createElement('link'); css.rel = 'stylesheet';
                 css.href = flyer.flyer_css;
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
               })();
-              if (flyer.flyer_debug == 'true') {
-                console.log("Flyer: Debug Mode - Custom CSS loaded")
-            };
         }
     });
-    if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - CSS Found")
-    };
-    if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode started")
-    };
 }
     var flycookietitle = "Cookies."; 
     var flycookiedesc = "By using Flyer.js, You Allow For Some Tracking Technologies to Be Used. You can Disable Flyer "; 
     var flycookielink = '<a onclick="rmvflyertwo()">Here</a>.'; 
     var flyercookiebtn = "Ok! Got it."; 
-    if (flyer.flyer_debug == 'true') {
-        console.log("Flyer: Debug Mode - FlyCookie markup ready")
-    };
     function pureFadeIn(elem, display){
       var el = document.getElementById(elem);
       el.style.opacity = 0;
