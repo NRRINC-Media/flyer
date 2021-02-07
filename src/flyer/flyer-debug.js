@@ -91,5 +91,4 @@ function flyerchkconf() {
                 flylog(" Debug Mode - Div found")
             };
         }}
-
 // this is in its own file, because it Lags the script if its loaded.
