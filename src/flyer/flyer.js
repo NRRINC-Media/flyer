@@ -2,9 +2,6 @@
 flyerinit();
 $(document).ready( function () {
     if ($("#flyer").length) {
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - Flyer Div found")
-        };
         $("#flyer").append('\
         <h2 id="flyer-t">\
            <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()" rel="noreferrer"></a><button style="position: absolute; right: 35px;background-color: transparent;cursor:pointer;border:black 2px solid; border-radius: 4px;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
@@ -17,9 +14,6 @@ $(document).ready( function () {
         </video>\
         <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
         </div>');
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - Markup loaded")
-        };
         $(document).ready(function () {
                 flyerdetect();
                 $("#flyer-frame").attr('src', flyer.flyer_frame_src); // link to html, htm or img.
@@ -37,20 +31,20 @@ $(document).ready( function () {
                 $("#flyer-desc").append(flyer.flyer_desc); 
                 $("#flyer-desc").attr('alt', flyer.flyer_desc);
                 flyerloadcount(); 
-                flylog("Im Locked and Loaded. Bring. it. on.");
+                flylog(" Im Locked and Loaded. Bring. it. on.");
                 if (flyer.flyer_debug == 'true') {
-                    flylog(" Debug Mode - attr loaded")
+                    flylog(" Debug Mode - DIV, Markup and settings Loaded")
                 };
         });
     } else {
         flylogerror('div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.');
+        if (flyer.flyer_debug == 'true') {
+            flylog(" Debug Mode - Flyer Div Not found")
+        };
     };
 });
 $(document).ready(function ($) {
     if ($("#flyer").length) {
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - Flyer Buttons Found")
-        };
     var mode = localStorage.getItem('ad');
     if (mode)
         $('#flyer').addClass(mode);
@@ -66,17 +60,11 @@ $(document).ready(function ($) {
         localStorage.setItem('ad', null);
     });
         if($("#nofly, #yesfly").length) {
-            flylog('buttons Found and loaded');
-            if (flyer.flyer_debug == 'true') {
-                flylog(" Debug Mode - Flyer buttons Loaded")
-            };
+            flylog(' buttons Found and loaded');
         } 
         // do nothing
     } else {
-        flylogerror('Buttons disabled due to div not found.');
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - Flyer Buttons not found on page")
-        };
+        flylogerror(' Buttons disabled due to div not found.');
         $("#nofly").remove();
         $("#yesfly").remove();
 };
@@ -112,21 +100,19 @@ function rmvflyer() {
             nxt();
         });
         flylogwarn("Removed");
+        if (flyer.flyer_debug == 'true') {
+            flylog(" Debug Mode - Remove Flyer Worked")
+        };
     }, 5000);
-    if (flyer.flyer_debug == 'true') {
-        flylog(" Debug Mode - Remove Flyer Worked")
-    };
 };
 function videoEnded() {
     $('#flyer-video').slideUp(1500)
             .queue(function(nxt) { 
                 $("#flyer-video").remove();
                 $("#flyer-image").slideDown(1500);
+                flylog("video end, image placed")
                 nxt();
             });
-            if (flyer.flyer_debug == 'true') {
-                flylog(" Debug Mode - Video end")
-            };
 }1000;
 $(document).ready(function () {
         $.ajax({
@@ -136,9 +122,6 @@ $(document).ready(function () {
                 $(".text").append("Flyer Load Number: " + data);
             }
         });
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - Video ended")
-        };
 });
 function flyerloadcount() {
     $.ajax({
@@ -148,7 +131,7 @@ function flyerloadcount() {
         flylog(" Logged +1")
       });
       if (flyer.flyer_debug == 'true') {
-        flylog(" Debug Mode - AJAX 1 worked")
+        flylog(" Debug Mode - AJAX 1 (load) worked")
     };
 } // DO NOT USE.
 function flyerclick() {
@@ -159,51 +142,28 @@ function flyerclick() {
         flylog(" Clicked +1")
       });
       if (flyer.flyer_debug == 'true') {
-        flylog(" Debug Mode - AJAX 2 worked")
-    };
+        flylog(" Debug Mode - AJAX 2 (click) worked")
+       };
 }
 function flyerdetect() {
     if (flyer.flyer_show === 'img') {
         $("#flyer-frame").remove();
         $("#flyer-video").remove();
         $("#flyer-image").show();
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - IMG loaded")
-        };
     } else if (flyer.flyer_show === 'vid') {
         $("#flyer-image").hide();
         $("#flyer-frame").remove();
         $("#flyer-video").show();
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - VID loaded")
-        };
     } else if (flyer.flyer_show === 'ifm') {
         $("#flyer-image").remove();
         $("#flyer-video").remove();
         $("#flyer-frame").show();
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - IFM loaded")
-        };
     } else {
         flylogerror("No IFM/VID/IMG set.")
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - No IFM/VID/IMG set.")
-        };
     }
 };
 function flyerinit() {
-    flylog = function() {
-        var context = "%c Flyer:";
-        return Function.prototype.bind.call(console.log, console, context, 'color:green;border:1px solid black');
-    }();
-    flylogwarn = function() {
-        var context = "%c Flyer:";
-        return Function.prototype.bind.call(console.warn, console, context, 'color:darkorange;border:1px solid black');
-    }();
-    flylogerror = function() {
-        var context = "%c Flyer:";
-        return Function.prototype.bind.call(console.error, console, context, 'color:red;border:1px solid black');
-    }();
+    flyconsole();
     try {
         flyer
     } catch (error) {
@@ -229,9 +189,12 @@ function flyerinit() {
         }
     }
     if (flyer.flyer_debug == 'true') {
-        flylog(" Debug Mode - Flyer config Found")
+        flydebug();
     };
     if (flyer.flyer_note == 'Hey! Welcome to Flyer! http://git.nrrinc.net/flyer') {
+        if (flyer.flyer_debug == 'true') {
+            flylog(" Debug Mode - Flyer Note found")
+        };
         // do nothing
     } else {
         flylog("add flyer_note to your config. where you set flyer up. Copy and paste.");
@@ -239,10 +202,6 @@ function flyerinit() {
         youforgottoaddthenote();
         // the reason for this, i have no idea. you can remove these lines if you want (remove lines 2 - 9)
     }
-    if (flyer.flyer_debug == 'true') {
-        flylog(" Debug Mode - Flyer Note found")
-        flyerchkconf();
-    };
     $(document).ready(function () {
         if (flyer.flyer_css === 'yes') {
             (function() {
@@ -267,17 +226,11 @@ function flyerinit() {
                 $('#flyer').remove();
             }
     });
-    if (flyer.flyer_debug == 'true') {
-        flylog(" Debug Mode started")
-    };
 }
     var flycookietitle = "Cookies."; 
     var flycookiedesc = "By using Flyer.js, You Allow For Some Tracking Technologies to Be Used. You can Disable Flyer "; 
     var flycookielink = '<a onclick="rmvflyertwo()">Here</a>.'; 
     var flyercookiebtn = "Ok! Got it."; 
-    if (flyer.flyer_debug == 'true') {
-        flylog(" Debug Mode - FlyCookie markup ready")
-    };
     function pureFadeIn(elem, display){
       var el = document.getElementById(elem);
       el.style.opacity = 0;
@@ -346,66 +299,30 @@ HTTP code: 200/202 or 4XX/5XX
 
 as a Note, i dont think I will collect Ip addresses, But it could help with Spam Protection
 */
-function flyerchkconf() {
-    if (flyer.flyer_css === 'yes') {
-        flylog(" Default CSS loaded")
-    } else if (flyer.flyer_css.length > 0){
-        flylogwarn("Custom CSS loaded. if CSS did not load, add HTTPS.")
-    }else {
-        flylogerror("Flyer: CSS Unable to load. Flyer.Flyer_css Not found")
-    };
-    if (flyer.flyer_show === 'img') {
-            flylog("IMG Loaded");
-            if (flyer.flyer_img_title.length > 0) {
-                flylog("IMG alt title set") 
-            } else {
-                flylogwarn("IMG alt title NOT set (ignore if IFM or VID is used.)")
-            };
-            if (flyer.flyer_img_src.length > 0) {
-                flylog("IMG link set") 
-            } else {
-                flylogwarn("IMG Link NOT set (ignore if IFM or VID is used.)")
-            };
-        } else if (flyer.flyer_show === 'vid') {
-            flylog("VID Loaded");
-            if (flyer.flyer_video.length > 0) {
-                flylog("Video link set") 
-            } else {
-                flylogwarn("Video Link NOT set (ignore if IMG or IFM is used.)")
-            };
-        } else if (flyer.flyer_show === 'ifm') {
-            flylog("IFM Loaded");
-            if (flyer.flyer_frame_src.length > 0) {
-                flylog("iframe SRC is working") 
-            } else {
-                flylogwarn("iframe SRC is missing (ignore if IMG or VID is used.)")
-            };
-            if (flyer.flyer_frame_rp.length > 0) {
-                flylog("iframe RP is working") 
-            } else {
-                flylogwarn("iframe RP is missing (ignore if IMG or VID is used.)")
-            };
-        } else {
-            flylogerror("No IFM/VID/IMG Loaded")
-    };
-        if (flyer.flyer_aid.length === 0) {
-            flylog("Aid is found") 
-        } else {
-            flylogwarn("Aid is Not found, May cause Issues in the Future")
-    };
-        if (flyer.flyer_title.length > 0) {
-            flylog("title is loaded") 
-        } else {
-            flylogerror("title missing")
-    };
-    if (flyer.flyer_title_link.length > 0) {
-            flylog("title link is loaded. Add HTTP if needed.") 
-        } else {
-            flylogerror("title link missing")
-        };
-    if (flyer.flyer_desc.length > 0) {
-        flylog("Desc is working") 
-    } else {
-        flylogwarn("Desc is Not working. Add a DESC to your config.")
-    };
+/*
+The idea for Plugins, You can import Custom Plugins, like Video or something.
+if anyone has any better ideas, help.
+*/
+function flydebug() {
+    $.getScript( "/src//flyer/flyer-debug.js" )
+    .done(function( script, textStatus ) {
+        flylog(' Loading debug',textStatus );
+        flylog(" Debug On")
+    })
+    .fail(function( jqxhr, settings, exception ) {
+        $( "div.log" ).text( "Triggered ajaxError handler." );
+    }); }
+function flyconsole() {
+    flylog = function() {
+        var context = "%c Flyer: ";
+        return Function.prototype.bind.call(console.log, console, context, 'color:green;border:1px solid black');
+    }();
+    flylogwarn = function() {
+        var context = "%c Flyer: ";
+        return Function.prototype.bind.call(console.warn, console, context, 'color:rgb(255, 179, 0);border:1px solid black');
+    }();
+    flylogerror = function() {
+        var context = "%c Flyer: ";
+        return Function.prototype.bind.call(console.error, console, context, 'color:red;border:1px solid black');
+    }();
 }
