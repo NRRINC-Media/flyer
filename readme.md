@@ -6,8 +6,8 @@
 # How to use
 ## Add to head
 ```html
-<!-- include jquery or jq.js above here -->
-<script src="/src/flyer/flyer.js"></script>
+<!-- jquery no longer needed (embed) -->
+<script src="/flyer/flyer.js"></script>
 ```
 ## Add flyer to page (div)
 ```html
@@ -32,7 +32,7 @@
             flyer_aid: '', 
             flyer_title: 'A Word From Our Sponsor: Crispy', 
             flyer_title_link: 'http://exmaple.com', 
-            flyer_frame_src: '/src/ad.html',
+            flyer_frame_src: '/flyer/ad.html',
             flyer_frame_rp: 'unsafe-url',
             flyer_desc:'your ad desc1',
             flyer_video:'/link/to/mp4.mp4',

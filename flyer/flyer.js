@@ -1,5 +1,5 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
-(function(){;var script = document.createElement("SCRIPT");script.src = '/src/flyer/jquery-embed.js';script.type = 'text/javascript';document.getElementsByTagName("head")[0].appendChild(script);
+(function(){;var script = document.createElement("SCRIPT");script.src = '/flyer/jquery-embed.js';script.type = 'text/javascript';document.getElementsByTagName("head")[0].appendChild(script);
 var checkReady= function(callback){
     if(window.jQuery){callback(jQuery);
     }else{window.setTimeout(function() {
@@ -182,12 +182,12 @@ function flyerinit() {
             flyer_aid: 'FLYER IS NOT WORKING', // Unused
             flyer_title: 'Default Flyer Config', // title
             flyer_title_link: 'http://git.nrrinc.net/flyer', //title link
-            flyer_frame_src: '/src/ad.html', // src to iframe, if iframe is set
+            flyer_frame_src: '/flyer/ad.html', // src to iframe, if iframe is set
             flyer_frame_rp: 'unsafe-url', // if url is on another server, change
             flyer_desc:'Flyer is not working ATM...', // Bottom text
             flyer_video:'/link/to/mp4.mp4', // video link (NOT YOUTUBE.), if video is set
             flyer_img_title: 'FlyerJS', // title of image, if image is set
-            flyer_img_src: "/src/flyer/flyer.svg", // image src, if image is set
+            flyer_img_src: "/flyer/flyer.svg", // image src, if image is set
             flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer", // unused, but to be used
             flyer_ajax1: "", // TBU
             flyer_ajax2: "", // TBU
@@ -206,14 +206,13 @@ function flyerinit() {
     } else {
         flylog("add flyer_note to your config. where you set flyer up. Copy and paste.");
         flylogwarn('flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer",');
-        youforgottoaddthenote();
         // the reason for this, i have no idea. you can remove these lines if you want (remove lines 2 - 9)
     }
     $(document).ready(function () {
         if (flyer.flyer_css === 'yes') {
             (function() {
                 var css = document.createElement('link'); css.rel = 'stylesheet';
-                css.href = '/src/flyer/flyer.css';
+                css.href = '/flyer/flyer.css';
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(css);
               })();
               if (flyer.flyer_debug == 'true') {
@@ -311,7 +310,7 @@ The idea for Plugins, You can import Custom Plugins, like Video or something.
 if anyone has any better ideas, help.
 */
 function flydebug() {
-    $.getScript( "/src//flyer/flyer-debug.js" )
+    $.getScript( "/flyer/flyer-debug.js" )
     .done(function( script, textStatus ) {
         flylog(' Loading debug',textStatus );
         flylog(" Debug On")
