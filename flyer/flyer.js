@@ -171,29 +171,12 @@ function flyerdetect() {
 };
 function flyerinit() {
     flyconsole();
-    try {
-        flyer
-    } catch (error) {
-        flylogerror("Add Conf to page. Above Flyer.js")
-         //flyer Default Backup
-        flyer = {
-            flyer_css: "yes", // Yes or url to css
-            flyer_show: 'img', //img/vid/frm
-            flyer_aid: 'FLYER IS NOT WORKING', // Unused
-            flyer_title: 'Default Flyer Config', // title
-            flyer_title_link: 'http://git.nrrinc.net/flyer', //title link
-            flyer_frame_src: '/flyer/ad.html', // src to iframe, if iframe is set
-            flyer_frame_rp: 'unsafe-url', // if url is on another server, change
-            flyer_desc:'Flyer is not working ATM...', // Bottom text
-            flyer_video:'/link/to/mp4.mp4', // video link (NOT YOUTUBE.), if video is set
-            flyer_img_title: 'FlyerJS', // title of image, if image is set
-            flyer_img_src: "/flyer/flyer.svg", // image src, if image is set
-            flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer", // unused, but to be used
-            flyer_ajax1: "", // TBU
-            flyer_ajax2: "", // TBU
-            flyer_useid: "TBD", // Random MD5
-            flyer_debug:"true", // debug mode
-        }
+    if (typeof flyer == 'undefined') {
+        //do nothing, go forward
+    } else {
+        $("#flyer").remove();
+        flylogerror("Config Not found. Removed for Safety. Add Config Above Flyer.");
+        stoppe();
     }
     if (flyer.flyer_debug == 'true') {
         flydebug();
@@ -217,7 +200,7 @@ function flyerinit() {
               })();
               if (flyer.flyer_debug == 'true') {
                 flylog(" Debug Mode - Flyer.CSS loaded")
-            };
+              };
         } else if (flyer.flyer_css.includes('https')) {
             (function() {
                 var css = document.createElement('link'); css.rel = 'stylesheet';
@@ -297,18 +280,6 @@ function purecookieDismiss() {
     rmvflyer();
     purecookieDismiss();
   }
-/*
-IP Address (Deleted every 14 Days)
-User Agent
-Device Width/Height
-HTTP code: 200/202 or 4XX/5XX
-
-as a Note, i dont think I will collect Ip addresses, But it could help with Spam Protection
-*/
-/*
-The idea for Plugins, You can import Custom Plugins, like Video or something.
-if anyone has any better ideas, help.
-*/
 function flydebug() {
     $.getScript( "/flyer/flyer-debug.js" )
     .done(function( script, textStatus ) {
@@ -320,16 +291,16 @@ function flydebug() {
     }); }
 function flyconsole() {
     flylog = function() {
-        var context = "%c Flyer: ";
-        return Function.prototype.bind.call(console.log, console, context, 'color:green;border:1px solid black');
+        var context = "%c Flyer.JS: ";
+        return Function.prototype.bind.call(console.log, console, context, 'color:green;');
     }();
     flylogwarn = function() {
-        var context = "%c Flyer: ";
-        return Function.prototype.bind.call(console.warn, console, context, 'color:rgb(255, 179, 0);border:1px solid black');
+        var context = "%c Flyer.JS: ";
+        return Function.prototype.bind.call(console.warn, console, context, 'color:rgb(255, 179, 0);');
     }();
     flylogerror = function() {
-        var context = "%c Flyer: ";
-        return Function.prototype.bind.call(console.error, console, context, 'color:red;border:1px solid black');
+        var context = "%c Flyer.JS: ";
+        return Function.prototype.bind.call(console.error, console, context, 'color:red;');
     }();
 }
 });})();
