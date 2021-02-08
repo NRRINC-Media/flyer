@@ -4,9 +4,10 @@ var checkReady= function(callback){
     if(window.jQuery){callback(jQuery);
     }else{window.setTimeout(function() {
          checkReady(callback);},20);
-        }};
+    }};
 checkReady(function($){
-    flyerinit();
+    
+flyerinit();
 $(document).ready( function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
