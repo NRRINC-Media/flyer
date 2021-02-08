@@ -6,7 +6,7 @@ var checkReady= function(callback){
          checkReady(callback);},20);
         }};
 checkReady(function($){
-flyerinit();
+    flyerinit();
 $(document).ready( function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
@@ -121,15 +121,6 @@ function videoEnded() {
                 nxt();
             });
 }1000;
-$(document).ready(function () {
-        $.ajax({
-            url : "/offsite/counter",
-            dataType: "text",
-            success : function (data) {
-                $(".text").append("Flyer Load Number: " + data);
-            }
-        });
-});
 function flyerloadcount() {
     $.ajax({
         type: "GET",
@@ -171,13 +162,6 @@ function flyerdetect() {
 };
 function flyerinit() {
     flyconsole();
-    if (typeof flyer == 'undefined') {
-        //do nothing, go forward
-    } else {
-        $("#flyer").remove();
-        flylogerror("Config Not found. Removed for Safety. Add Config Above Flyer.");
-        stoppe();
-    }
     if (flyer.flyer_debug == 'true') {
         flydebug();
     };
