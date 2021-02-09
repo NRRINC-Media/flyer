@@ -1,4 +1,4 @@
-// the Flyer Project, NRRINC Media (C) 2021, Apache V2 
+// the Flyer Project, NRRINC Media (C) 2021, Apache V2. Flyer.js V1.3
 flypreinit();
 function flypreinit() {
     try {
