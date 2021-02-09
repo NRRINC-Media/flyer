@@ -1,4 +1,4 @@
-# Welcome to Flyer
+# Welcome to Flyer (v1.3)
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpatrons&style=plastic)](https://patreon.com/nrrinc)
 ##### _what is flyer? flyer is a Simple ad script that helps small websites have a Single ad. and allow the use to have full control over it._
 <img src="https://raw.githubusercontent.com/Nolanrulesroblox/Flyer/master/ad/flyer-logo.svg" alt="drawing" width="400"/></img>
@@ -39,14 +39,28 @@
             flyer_img_title: 'my cool image',
             flyer_img_src: "https://via.placeholder.com/500x375",
             flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer",
+            flyer_debug:"", //set to true if you need debug
     }
     </script>
 ```
 # Updates:
 ```code
-+ public-beta, For anyone who wants to try it, they just have to download the folder, and run the index.html! (zip file not provided)
-
-Check "demo.html" for all of Flyer Options.
++ Debugger (flyer.flyer_debug:"true")
++ No More Jquery (embedded now)
++ Custom CSS support (with Error checking, Needs HTTPS)
++ Custom Console.log for Easy Error Checking
+---------------------------------------------------------
+~ Flyer is now /flyer/ and not /src/flyer/
+~ Flyer Loading (more smooth)
+~ Some timings for Flyerclose
+---------------------------------------------------------
+- Jquery
+- Flyer-conf.js
+- init.js
+- /src/flyer/
+- typescript (as not really being used)
+---------------------------------------------------------
+/ Many Fixes.
 ```
 ---
 update key: <br>
