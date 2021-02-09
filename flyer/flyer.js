@@ -1,4 +1,33 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2 
+flypreinit();
+function flypreinit() {
+    try {
+        flyer
+    } catch (error) {
+        console.error("Flyer: Add Config to page. Above Flyer.js. Fallback Config loaded.");
+        console.error("Flyer: Add Config to page. Above Flyer.js. Fallback Config loaded.");
+        console.error("Flyer: Add Config to page. Above Flyer.js. Fallback Config loaded. (yes x3. deal with it.)")
+         //flyer Default Backup
+        flyer = {
+            flyer_css: "yes", // Yes or url to css
+            flyer_show: 'img', //img/vid/frm
+            flyer_aid: 'FLYER IS NOT WORKING', // Unused
+            flyer_title: 'Default Flyer Config', // title
+            flyer_title_link: 'http://git.nrrinc.net/flyer', //title link
+            flyer_frame_src: '/ad.html', // src to iframe, if iframe is set
+            flyer_frame_rp: 'unsafe-url', // if url is on another server, change
+            flyer_desc:'Flyer is not working ATM...', // Bottom text
+            flyer_video:'/link/to/mp4.mp4', // video link (NOT YOUTUBE.), if video is set
+            flyer_img_title: 'FlyerJS', // title of image, if image is set
+            flyer_img_src: "/flyer/flyer.svg", // image src, if image is set
+            flyer_note: "Hey! Welcome to Flyer! http://git.nrrinc.net/flyer", // unused, but to be used
+            flyer_ajax1: "",
+            flyer_ajax2: "",
+            flyer_useid: "TBD", // Random MD5
+            flyer_debug:"true",
+        }
+    }
+}
 (function(){;var script = document.createElement("SCRIPT");script.src = '/flyer/jquery-embed.js';script.type = 'text/javascript';document.getElementsByTagName("head")[0].appendChild(script);
 var checkReady= function(callback){
     if(window.jQuery){callback(jQuery);
