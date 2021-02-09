@@ -1,0 +1,42 @@
+{
+    "name": "flyer.js",
+    "description": "a new ad script",
+    "version": "v1.3",
+    "keywords": [
+      "javascript",
+      "Flyer",
+      "Ad",
+      "NRRINC"
+    ],
+    "maintainers": [
+      {
+        "name": "Nolan",
+        "email": "flyer+nolan@nrrinc.net",
+        "web": "http://nrrinc.net"
+      },
+      {
+        "name": "NRRINC Media",
+        "email": "contact@nrrinc.net",
+        "web": "http://nrrinc.net"
+      }
+    ],
+    "demos": [
+      "/demo.html"
+    ],
+    "bugs": {
+      "mail": "bug+contact@nrrinc.net"
+    },
+    "repositories": [
+      {
+        "type": "git",
+        "url": "http://git.nrrinc.net/flyer.git"
+      }
+    ],
+    "licenses": [
+      {
+        "name": "Apachev2",
+        "url": "https://github.com/Nolanrulesroblox/Flyer/blob/master/LICENSE"
+      }
+    ],
+    "homepage": "http://git.nrrinc.net/flyer"
+  }
