@@ -49,6 +49,7 @@
 + No More Jquery (embedded now)
 + Custom CSS support (with Error checking, Needs HTTPS)
 + Custom Console.log for Easy Error Checking
++ LTS Flyer.js (Updated every v0.5)
 ---------------------------------------------------------
 ~ Flyer is now /flyer/ and not /src/flyer/
 ~ Flyer Loading (more smooth)
