@@ -28,60 +28,7 @@ function flypreinit() {
         }
     }
 }
-(function(){;var script = document.createElement("SCRIPT");script.src = '/flyer/jquery-embed.js';script.type = 'text/javascript';document.getElementsByTagName("head")[0].appendChild(script);
-var checkReady= function(callback){
-    if(window.jQuery){callback(jQuery);
-    }else{window.setTimeout(function() {
-         checkReady(callback);},20);
-    }};
-checkReady(function($){
-    
 flyerinit();
-$(document).ready( function () {
-    if ($("#flyer").length) {
-        $("#flyer").append('\
-        <h2 id="flyer-t">\
-        <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()" rel="noreferrer"></a><button style="position: absolute; right: 35px;background-color: transparent;cursor:pointer;border:black 2px solid; border-radius: 4px;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
-        </h2>\
-        <div id="flyer-content">\
-        <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
-        <iframe id="flyer-frame" class="flyer-iframe" src="" allowpaymentrequest="false" name="Flyer" allowfullscreen="false" referrerpolicy="unsafe-url" stlye="display: none;"></iframe>\
-        <video oncontextmenu="return false;" id="flyer-video" width="100%" height="100%" muted style="display:block;" onended="videoEnded()" autoplay="autoplay">\
-        <source src="" type="video/mp4">\
-        </video>\
-        <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
-        </div>');
-        $(document).ready(function () {
-                flyerdetect();
-                $("#flyer-frame").attr('src', flyer.flyer_frame_src); // link to html, htm or img.
-                $("#flyer-frame").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
-                $("#flyer-frame").attr('name', 'Flyer'); // name of iframe ALT
-                $("#flyer-frame").attr('allowfullscreen', 'false');  // do not change.
-                $("#flyer-frame").attr('allowpaymentrequest', 'false'); // do not allow payments
-                $("#flyer-frame").attr('referrerpolicy', flyer.flyer_frame_rp); // what kind of URL is it? Be unsafe if you dont know.
-                $("#flyer-image").attr('src', flyer.flyer_img_src); // img SRC Gif, webm, PNG or jpeg.
-                $("#flyer-image").attr('title', flyer.flyer_img_title); // title of img, alt
-                $("#flyer-image").attr('alt',flyer.flyer_img_title); // alt of an alt
-                $("#flyer_video").attr('data-type', 'video/mp4'); 
-                $("#flyer-title").append(flyer.flyer_title);
-                $("#flyer-title").attr('href',flyer.flyer_title_href); 
-                $("#flyer-desc").append(flyer.flyer_desc); 
-                $("#flyer-desc").attr('alt', flyer.flyer_desc);
-                // working on Video
-               // $("#flyer-video").attr('src', flyer.flyer_video)
-                flyerloadcount(); 
-                flylog(" Im Locked and Loaded. Bring. it. on.");
-                if (flyer.flyer_debug == 'true') {
-                    flylog(" Debug Mode - DIV, Markup and settings Loaded")
-                };
-        });
-    } else {
-        flylogerror('div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.');
-        if (flyer.flyer_debug == 'true') {
-            flylog(" Debug Mode - Flyer Div Not found")
-        };
-    };
-});
 $(document).ready(function ($) {
     if ($("#flyer").length) {
     var mode = localStorage.getItem('ad');
@@ -318,5 +265,49 @@ function flyconsole() {
         var context = "%c Flyer.JS: ";
         return Function.prototype.bind.call(console.error, console, context, 'color:red;');
     }();
-}
-});})();
+};
+$(document).ready( function () {
+    if ($("#flyer").length) {
+        $("#flyer").append('\
+        <h2 id="flyer-t">\
+        <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()" rel="noreferrer"></a><button style="position: absolute; right: 35px;background-color: transparent;cursor:pointer;border:black 2px solid; border-radius: 4px;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
+        </h2>\
+        <div id="flyer-content">\
+        <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
+        <iframe id="flyer-frame" class="flyer-iframe" src="" allowpaymentrequest="false" name="Flyer" allowfullscreen="false" referrerpolicy="unsafe-url" stlye="display: none;"></iframe>\
+        <video oncontextmenu="return false;" id="flyer-video" width="100%" height="100%" muted style="display:block;" onended="videoEnded()" autoplay="autoplay">\
+        <source src="" type="video/mp4">\
+        </video>\
+        <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
+        </div>');
+        $(document).ready(function () {
+                flyerdetect();
+                $("#flyer-frame").attr('src', flyer.flyer_frame_src); // link to html, htm or img.
+                $("#flyer-frame").attr('sandbox', ''); // edit if needed, to disable iframe scripts.
+                $("#flyer-frame").attr('name', 'Flyer'); // name of iframe ALT
+                $("#flyer-frame").attr('allowfullscreen', 'false');  // do not change.
+                $("#flyer-frame").attr('allowpaymentrequest', 'false'); // do not allow payments
+                $("#flyer-frame").attr('referrerpolicy', flyer.flyer_frame_rp); // what kind of URL is it? Be unsafe if you dont know.
+                $("#flyer-image").attr('src', flyer.flyer_img_src); // img SRC Gif, webm, PNG or jpeg.
+                $("#flyer-image").attr('title', flyer.flyer_img_title); // title of img, alt
+                $("#flyer-image").attr('alt',flyer.flyer_img_title); // alt of an alt
+                $("#flyer_video").attr('data-type', 'video/mp4'); 
+                $("#flyer-title").append(flyer.flyer_title);
+                $("#flyer-title").attr('href',flyer.flyer_title_href); 
+                $("#flyer-desc").append(flyer.flyer_desc); 
+                $("#flyer-desc").attr('alt', flyer.flyer_desc);
+                // working on Video
+                $("#flyer-video").attr('src', flyer.flyer_video)
+                flyerloadcount(); 
+                flylog(" Im Locked and Loaded. Bring. it. on.");
+                if (flyer.flyer_debug == 'true') {
+                    flylog(" Debug Mode - DIV, Markup and settings Loaded")
+                };
+        });
+    } else {
+        flylogerror('div Not found. Flyer Stopped. to fix, add <div id="flyer"></div> do your page.');
+        if (flyer.flyer_debug == 'true') {
+            flylog(" Debug Mode - Flyer Div Not found")
+        };
+    };
+});
