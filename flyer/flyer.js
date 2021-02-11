@@ -41,13 +41,13 @@ $(document).ready( function () {
     if ($("#flyer").length) {
         $("#flyer").append('\
         <h2 id="flyer-t">\
-           <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()" rel="noreferrer"></a><button style="position: absolute; right: 35px;background-color: transparent;cursor:pointer;border:black 2px solid; border-radius: 4px;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
+        <a href="#" id="flyer-title" target="_top" alt="Link to Sponsor" onClick="flyerclick()" rel="noreferrer"></a><button style="position: absolute; right: 35px;background-color: transparent;cursor:pointer;border:black 2px solid; border-radius: 4px;" onclick="rmvflyer()" id="flyer-xbtn">X</button>\
         </h2>\
         <div id="flyer-content">\
         <img class="flyer-image" id="flyer-image" src="" alt="none" title="" style="display:none;">\
         <iframe id="flyer-frame" class="flyer-iframe" src="" allowpaymentrequest="false" name="Flyer" allowfullscreen="false" referrerpolicy="unsafe-url" stlye="display: none;"></iframe>\
         <video oncontextmenu="return false;" id="flyer-video" width="100%" height="100%" muted style="display:block;" onended="videoEnded()" autoplay="autoplay">\
-        <source src="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_640_3MG.mp4#t=25" type="video/mp4">\
+        <source src="" type="video/mp4">\
         </video>\
         <p class="flyer-desc" id="flyer-desc" alt="ad desc."></p>\
         </div>');
@@ -67,6 +67,8 @@ $(document).ready( function () {
                 $("#flyer-title").attr('href',flyer.flyer_title_href); 
                 $("#flyer-desc").append(flyer.flyer_desc); 
                 $("#flyer-desc").attr('alt', flyer.flyer_desc);
+                // working on Video
+               // $("#flyer-video").attr('src', flyer.flyer_video)
                 flyerloadcount(); 
                 flylog(" Im Locked and Loaded. Bring. it. on.");
                 if (flyer.flyer_debug == 'true') {

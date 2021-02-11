@@ -1,4 +1,4 @@
-/* // the Flyer Project, NRRINC Media (C) 2021, Apache V2 */
+/* // the Flyer Project, NRRINC Media (C) 2021, Apache V2 | V0.2*/
 function flyerchkconf() {
     if (flyer.flyer_css === 'yes') {
         flylog(" Default CSS loaded")
