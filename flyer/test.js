@@ -27,19 +27,20 @@ function flypreinit() {
         }
     }
 };
-document.querySelector(window).ready(function flyerinit() {
-    if (Element.querySelector("#flyer").length) {
+function flyerinit() {
+    flyconsole();
+    if (document.querySelector("#flyer")) {
     var mode = localStorage.getItem('ad');
     if (mode)
-    Element.querySelector('#flyer').classList.add(mode);
+    document.querySelector('#flyer').classList.add(mode);
 
-    Element.querySelector("#nofly").click(function () {
-        Element.querySelector("#flyer").classList.add("hide");
+    document.querySelector("#nofly").click(function () {
+        document.querySelector("#flyer").classList.add("hide");
         flylog(" Hidden");
         localStorage.setItem('ad', 'hide');
     });
-    Element.querySelector("#yesfly").click(function () {
-        Element.querySelector("#flyer").removeClass("hide");
+    document.querySelector("#yesfly").click(function () {
+        document.querySelector("#flyer").removeClass("hide");
         flylog(" Shown");
         localStorage.setItem('ad', null);
     });
@@ -49,11 +50,25 @@ document.querySelector(window).ready(function flyerinit() {
         // do nothing
     } else {
         flylogerror(' Buttons disabled due to div not found.');
-        Element.querySelector("#nofly").remove();
-        Element.querySelector("#yesfly").remove();
+        document.querySelector("#nofly").removeChild(document.querySelector("#nofly"));
+        document.querySelector("#yesfly").remove();
     };
-});
+};
 flyerinit();
+function flyconsole() {
+    flylog = function() {
+        var context = "%c Flyer.JS: ";
+        return Function.prototype.bind.call(console.log, console, context, 'color:green;');
+    }();
+    flylogwarn = function() {
+        var context = "%c Flyer.JS: ";
+        return Function.prototype.bind.call(console.warn, console, context, 'color:rgb(255, 179, 0);');
+    }();
+    flylogerror = function() {
+        var context = "%c Flyer.JS: ";
+        return Function.prototype.bind.call(console.error, console, context, 'color:red;');
+    }();
+};
 /* old js */
 /*
 flypreinit();
