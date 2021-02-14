@@ -1,5 +1,5 @@
 # Welcome to Flyer (v1.3)
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpatrons&style=plastic)](https://patreon.com/nrrinc)
+<!--[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpatrons&style=plastic)](https://patreon.com/nrrinc)-->
 ##### _what is flyer? flyer is a Simple ad script that helps small websites have a Single ad. and allow the use to have full control over it._
 <img src="https://raw.githubusercontent.com/Nolanrulesroblox/Flyer/master/retired/ad/flyer-logo.svg" alt="drawing" width="400"/></img>
 ---
@@ -70,8 +70,8 @@ update key: <br>
 <span>~</span> changed<br>
 <span>-</span> removed<br>
 <br>
-<br>
-[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpledges&style=plastic)](https://patreon.com/nrrinc)
+
+<!--[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpledges&style=plastic)](https://patreon.com/nrrinc)-->
 
 // do note, the Flyer JS on the Github.io Site is NOT up to date. It is updated once every ~~2~~ weeks. <small>...<i>when i get aroud to it.. </i> </small>
 
