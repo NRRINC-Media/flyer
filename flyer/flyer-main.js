@@ -1,36 +1,8 @@
 // the Flyer Project, NRRINC Media (C) 2021, Apache V2. Flyer.js V1.3.3
-const loadScript = (source, beforeEl, async = true, defer = true) => {
-    return new Promise((resolve, reject) => {
-      let script = document.createElement('script');
-      const prior = beforeEl || document.getElementsByTagName('script')[0];
-  
-      script.async = async;
-      script.defer = defer;
-  
-      function onloadHander(_, isAbort) {
-        if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
-          script.onload = null;
-          script.onreadystatechange = null;
-          script = undefined;
-  
-          if (isAbort) { reject(); } else { resolve(); }
-        }
-      }
-  
-      script.onload = onloadHander;
-      script.onreadystatechange = onloadHander;
-  
-      script.src = source;
-      prior.parentNode.insertBefore(script, prior);
-    });
-  }
-const scriptUrl = '/flyer/jquery-embed.js';
-loadScript(scriptUrl).then(() => {
-  console.log('script loaded');
-}, () => {
-  console.log('fail to load script');
-});
-
+if (typeof $ === 'undefined') {
+    location.reload();
+    //why..... JUST LEARN TO CODE JAVASCRIPT AND THIS DOESNT NEED TO HAPPEN.
+}
 flypreinit();
 function flypreinit() {
     try {
