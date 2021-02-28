@@ -3,6 +3,8 @@
 ##### _what is flyer? flyer is a Simple ad script that helps small websites have a Single ad. and allow the use to have full control over it._
 <img src="https://raw.githubusercontent.com/Nolanrulesroblox/Flyer/master/retired/ad/flyer-logo.svg" alt="drawing" width="400"/></img>
 ---
+### an update to Flyer, Since it has become more than just a JS file, its now being a Whole Platform. Go to "FlyerJS" Repo for all the parts.
+---
 # How to use
 ## Add to head
 ```html
