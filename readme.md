@@ -8,7 +8,7 @@
 ### Sources for Flyer:
 <ul>
 <br>
-<li><a href="">Flyer JS Front end</a></li>
+<li><a href="https://github.com/NRRINC-Media/FlyerJS-Frontend">Flyer JS Front end</a></li>
 <br>
 <li><a href="https://github.com/NRRINC-Media/FlyerJS-Backend">Flyer JS backend</a></li>
 <br>
@@ -18,8 +18,11 @@
 <br>
 
 ---
+
 <br>
+
 ## Add to head
+
 ```html
 <!-- jquery no longer needed (embed) -->
 <script src="/flyer/flyer.js"></script>
