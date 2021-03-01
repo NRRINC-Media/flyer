@@ -1,14 +1,14 @@
 # Welcome to Flyer (v1.3)
 <!--[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpatrons&style=plastic)](https://patreon.com/nrrinc)-->
 ##### _what is flyer? flyer is a Simple ad script that helps small websites have a Single ad. and allow the use to have full control over it._
-<img src="https://raw.githubusercontent.com/Nolanrulesroblox/Flyer/master/retired/ad/flyer-logo.svg" alt="drawing" width="400"/></img>
+<img src="https://raw.githubusercontent.com/Nolanrulesroblox/FlyerJS-Frontend/master/img/flyer-logo.svg" alt="drawing" width="400"/></img>
 ---
 # How to use
 
 ### Sources for Flyer:
 <ul>
 <br>
-<li><a href="">Flyer JS Front end</a></li>
+<li><a href="https://github.com/NRRINC-Media/FlyerJS-Frontend">Flyer JS Front end</a></li>
 <br>
 <li><a href="https://github.com/NRRINC-Media/FlyerJS-Backend">Flyer JS backend</a></li>
 <br>
@@ -18,8 +18,11 @@
 <br>
 
 ---
+
 <br>
+
 ## Add to head
+
 ```html
 <!-- jquery no longer needed (embed) -->
 <script src="/flyer/flyer.js"></script>
