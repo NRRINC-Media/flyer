@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+  <CD>
+    <TITLE>Empire Burlesque</TITLE>
+    <ARTIST>Bob Dylan</ARTIST>
+    <COUNTRY>USA</COUNTRY>
+    <COMPANY>Columbia</COMPANY>
+    <PRICE>10.90</PRICE>
+    <YEAR>1985</YEAR>
+  </CD>
+  <CD>
+    <TITLE>Hide your heart</TITLE>
+    <ARTIST>Bonnie Tyler</ARTIST>
+    <COUNTRY>UK</COUNTRY>
+    <COMPANY>CBS Records</COMPANY>
+    <PRICE>9.90</PRICE>
+    <YEAR>1988</YEAR>
+  </CD>
+  <CD>
+    <TITLE>Burning fire</TITLE>
+    <ARTIST>Johnie ca$h</ARTIST>
+    <COUNTRY>USA</COUNTRY>
+    <COMPANY>mydadisacunt</COMPANY>
+    <PRICE>9.90</PRICE>
+    <YEAR>1988</YEAR>
+  </CD>
+  <DEMO-DO-NOT-USE>
+    <fly-ad>
+      <show>img</show>
+      <video-src>null</video-src>
+      <video-poster>null</video-poster>
+      <image-src>/flyer/img.png</image-src>
+      <image-title-alt>My cool ad</image-title-alt>
+      <iframe-src>null</iframe-src>
+      <title>Welcome to Dick's Sporting Goods</title>
+      <title-link>http://www.wheatonslaw.com</title-link>
+      <desc>dont be a dick..</desc>
+    </fly-ad>
+    <fly-global>
+      <debug>null</debug>
+      <note>Hey! Welcome to Flyer! http://git.nrrinc.net/flyer</note>
+      <iframe-rp>unsafe-url</iframe-rp>
+      <css-config>yes</css-config>
+    </fly-global>
+  </DEMO-DO-NOT-USE>
+</CATALOG>
