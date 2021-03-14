@@ -1,4 +1,4 @@
-# Welcome to Flyer (v1.3)
+# Welcome to Flyer (v1.4)
 <!--[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpatrons&style=plastic)](https://patreon.com/nrrinc)-->
 ##### _what is flyer? flyer is a Simple ad script that helps small websites have a Single ad. and allow the use to have full control over it._
 <img src="https://raw.githubusercontent.com/NRRINC-Media/FlyerJS/master/img/flyer-logo.svg" alt="drawing" width="400"/></img>
@@ -8,11 +8,11 @@
 ### Sources for Flyer:
 <ul>
 <br>
-<li><a href="https://github.com/NRRINC-Media/FlyerJS-Frontend">Flyer JS Front end</a></li>
+<li><a href="https://github.com/NRRINC-Media/FlyerJS/tree/browser">Flyer JS Front end</a></li>
 <br>
-<li><a href="https://github.com/NRRINC-Media/FlyerJS-Backend">Flyer JS backend</a></li>
+<li><a href="https://github.com/NRRINC-Media/FlyerJS/tree/Server">Flyer JS backend</a></li>
 <br>
-<li><a href="#">Flyer JS DB</a></li>
+<li><a href="https://github.com/NRRINC-Media/FlyerJS/tree/db">Flyer JS Databases (note, not up yet as of 3/1/2021)</a></li>
 </ul>
 
 <br>
@@ -89,8 +89,6 @@ update key: <br>
 <span>-</span> removed<br>
 <br>
 
-<!--[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpledges&style=plastic)](https://patreon.com/nrrinc)-->
+[![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dnrrinc%26type%3Dpledges&style=plastic)](https://patreon.com/nrrinc)
 
-// do note, the Flyer JS on the Github.io Site is NOT up to date. It is updated once every ~~2~~ weeks. <small>...<i>when i get aroud to it.. </i> </small>
-
-##### Notice: I do not work on flyer on weekends. Sorry.
+###### // do note, the Flyer JS on the Github.io Site is NOT up to date. It is updated once every ~~2~~ weeks. <small>...<i>when i get aroud to it.. </i> </small>
